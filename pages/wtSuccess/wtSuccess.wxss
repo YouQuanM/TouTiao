@@ -1,0 +1,28 @@
+.page{
+  background: #fff;
+  height: 1334rpx;
+}
+
+.wt-success{
+  text-align: center;
+}
+
+.wt-success image{
+  width:551rpx;
+  height:452rpx;
+  margin-top:150rpx;
+  margin-left:-60rpx;
+}
+
+.wt-success view{
+  font-size:36rpx;
+  color:#333;
+  margin-top:85rpx;
+}
+
+.wt-success button{
+  width:50%;
+  background:#3dbcc6;
+  color:#fff;
+  margin-top:85rpx;
+}

@@ -1,0 +1,141 @@
+<scroll-view class='page' scroll-y="{{isScroll}}" scroll-top='{{topNum}}'>
+  <!-- <view class='danmu_all'>
+    <block wx:for="{{roll_word_list}}" wx:for-index="index" wx:key="*this">
+      <view class='danmu' animation="{{animationData}}">
+        <image src='{{item.avatar}}' class='dm_head'></image>
+        <view class='dm_name'>
+          <view class='dm_mask'></view>
+          <view class='dm_text'>{{index}} {{item.name}} {{item.text}}</view>
+        </view>
+      </view>
+    </block>
+  </view> -->
+
+<view class='inside'></view>
+<swiper class="danmu_all"  autoplay="true" interval="3000" duration="5000" circular="true" vertical='true'>
+  <block wx:for="{{roll_word_list}}" wx:key="unique">
+    <swiper-item>
+      <view class='danmu'>
+        <image src='{{item.avatar}}' class='dm_head'></image>
+        <view class='dm_name'>
+          <view class='dm_mask'></view>
+          <view class='dm_text'>{{item.name}} {{item.text}}</view>
+        </view>
+      </view>
+    </swiper-item>
+  </block>
+  <swiper-item></swiper-item>
+</swiper>
+
+  
+  <view class='rule' bindtap='clickRule'>活动规则</view>
+  <image src='../../images/active_cb.png' mode="widthFix" class='bg_img'></image>
+  <image src='../../images/unicorn.png' mode="widthFix" class='bg_unicorn'wx:if='{{fin_no}}'></image>
+  <image src='../../images/egg.png' mode="widthFix" class='bg_egg' wx:if='{{fin_no}}'></image>
+  <image src='../../images/box.png' mode="widthFix" class='bg_box' wx:if='{{fin_no}}'></image>
+  <image src='../../images/fin.png' mode="widthFix" class='fin' wx:if='{{fin_yes}}'></image>
+  <view class='fin_word' wx:if='{{fin_yes}}'>
+    <view class='money'>￥<view>{{price_fin}}</view></view>
+    <view class='text'>{{des_fin}}</view>
+    <view class='date'>{{date_fin}}到期</view>
+  </view>
+  <view class='mask' wx:if='{{rule}}'></view>
+  <view class='active_rule' wx:if='{{rule_word}}'>
+    <image src='../../images/rule.png'></image>
+    <scroll-view class='rule_word' scroll-y="true" style="width:500rpx;height:650rpx">
+      <view>1、活动期间，邀请10名好友帮忙拆包，拆包成功，可获取房租立减券，金额最高达到千元;</view>
+      <view>2、每个用户仅限领取1个神秘大礼包哦！每个帮拆好友仅限帮助1个不同好友拆包哦！</view>
+      <view>3、领取成功后，奖品在小程序个人中心优惠券中查看哦！还可以关注蛋壳公寓公众号以及下载App去使用；</view>
+      <view>4、拆取红包期限为24小时内有效，自领取之日起30天内有效；</view>
+      <view>5、通过此活动获得的房租代金券只限选择年租用户使用；</view>
+      <view>6、如在活动中有作弊刷礼品行为，一经发现，即会立即取消游戏和领奖资格哦！如有任何疑问，请拨打400-818-5656 进行咨询。</view>
+      <view>7、礼包与以下活动共享：椋鸟计划：针对2018年应届毕业生，签约满一年及以上，即可享受最高1000元返现；“蛋壳公寓”会不定期推出指定房源立减活动；椋鸟计划和指定房源立减活动，优惠不共享。</view>
+    </scroll-view>
+    <view class='close' bindtap='close'></view>
+  </view>
+
+  <view class='receive_mask'  wx:if='{{receive_success}}'></view>
+  <view class='receive_success'  wx:if='{{receive_success}}'>
+    <view class='receive_title' style='opacity:{{opacitys}}'>哇，您获得了</view>
+    <view class='receive_sub_title' style='opacity:{{opacitys}}'>200元代金券</view>
+    <image src='../../images/box1.png' class='receive_box' animation="{{animationData}}"></image>
+    <image src='../../images/box_bg.png' class='box_bg' animation="{{box_bg}}"></image>
+    <view class='photo_album_fin' bindtap='goto_coupon' style='opacity:{{opacitys}}'>
+      <text>前往查看</text>
+    </view>
+    <image src='../../images/close.png' class='receive_close' style='opacity:{{opacitys}}' bindtap='receive_close'></image>
+  </view>
+
+  <view class='progress' wx:if='{{progress}}'>
+    <view class='head_part' style='left:{{head_widht}}%' wx:if="{{head_part}}">
+      <image src='../../images/head.png' class='head_bg'></image>
+      <image src='{{owen_head}}' class='head_real'></image>
+    </view>
+    <view class='progress_line'>
+      <view class='progress_inside' style='width:{{pro_width}}%;background:{{line_bg}}'></view>
+    </view>
+  </view>
+  <view class='word_line' wx:if='{{no_one_cha}}'>还没有小伙伴帮拆礼物哦~</view>
+  <view class='word_line' wx:if='{{have_cha}}'>还差{{friends_num}}个小伙伴拆礼包哦！</view>
+  <view class='word_line' wx:if='{{wancheng}}'>太厉害了{{owen_name}}!</view>  
+  <view class='word_line' wx:if='{{overdue_onoff}}' style='color:#b8b6c6;'>抱歉！该活动已经结束啦！</view>
+  <view class='word_line_fin' wx:if='{{word_line_fin}}'>太厉害了{{owen_name}}!</view>  
+  <view class='chai_success' wx:if='{{chai_success}}'>帮拆成功！他还差{{friends_num}}个小伙伴继续拆礼包哦！</view>  
+  <view class='already' wx:if='{{already}}'>此小伙伴已经领到礼包了!</view>  
+  <view class='count_down' wx:if='{{count_down}}'>
+    <view>{{countDownHour}}</view>
+    <view>{{countDownMinute}}</view>
+    <view>{{countDownSecond}}</view>
+  </view>
+
+   <view class='btn_share' wx:if='{{btn_share}}'>
+    <view class='photo_album' bindtap='share'>
+      <image src='../../images/photo_album.png'></image>
+      <text>保存到相册</text>
+    </view>
+    <view class='invite' bindtap='invite'>
+      <image src='../../images/invite.png'></image>
+      <text>邀好友拆礼包</text>
+      <button class='shareBtn' open-type="share" bindtap='onShareAppMessage'></button>
+    </view>
+  </view>  
+
+  <view class='cha_btn' wx:if='{{wancheng}}' bindtap='cha_btn'>
+    <view>拆开礼包</view>
+  </view>
+
+  <view class='other' wx:if='{{other}}' style='height:{{other_height}}rpx'>
+    <view class='help_ta' bindtap='help_ta' style='background:{{is_help_bg}};color:{{is_help_color}};' wx:if='{{bang_chai}}'>帮Ta拆礼包</view>
+    <view class='my_too' bindtap='my_too'>我也要拿大奖</view>
+  </view>  
+
+  <view class='overdue' wx:if='{{overdue_onoff}}'>
+    <view>活动已结束</view>
+  </view> 
+
+  <view class='goto_coupon' wx:if='{{goto_coupon}}' bindtap='goto_coupon_1'>
+    <view>前往查看</view>
+  </view> 
+
+    <image src='../../images/middle.png'  mode="widthFix" class='middle_img'></image>
+    <view class='no_friend' wx:if="{{no_friend}}">还没有好友帮拆礼包</view> 
+    <block wx:for="{{friend}}" wx:for-index="index" wx:key="*this" wx:if="{{friend_list}}">
+      <view class='friend'>
+        <image src='{{item.images}}'></image>
+        <view class='user_name'>{{item.name}}</view>
+        <view class='detail'>
+          <view class='first_line'>帮我打开礼包</view>
+          <view>{{item.time}}</view>
+          <!-- <view>12:30</view> -->
+        </view>
+      </view>
+    </block>
+
+   
+  <canvas canvas-id="shareCanvas" style="width:270px;height:480px;position:fixed;top:0;left:500px;" wx:if='{{canvas}}'></canvas>
+  <image src='../../images/bottom.png'  mode="widthFix" class='bottom_img'></image>
+   <view hidden='{{hidden}}' class='preview'>
+    <image src='{{prurl}}'></image>
+    <button type='primary' size='mini' bindtap='save'>保存分享图</button>
+  </view> 
+</scroll-view>

@@ -1,0 +1,121 @@
+<view class='page'>
+  <!--site-->
+   <!-- <web-view wx:if='{{onoff}}' src="{{bannerURL}}"></web-view>  -->
+  <!-- <web-view wx:if='{{onoff}}' src="https://www.dankegongyu.com/u/coupon/tip"></web-view> -->
+  <view class='pre_load' wx:if="{{pre_load}}">
+    <image src='//public.wutongwan.org/public-20180519-FhkTGEtNrhgOoe651B9XI_lCYzIr'></image>
+  </view>
+  <view class='top-site'>
+    <picker class='header-mean' bindchange="changeArea" value="{{areaIndex}}" range="{{areaList}}">
+      <!-- <view class="hd"></view> -->
+      <image style='width:18rpx;height:11rpx;position:relative;left:60rpx;top:5rpx;' src='../../images/down.png'></image>
+      <view class='site-city'>
+        <view class='site-city-val'>{{areaList[areaIndex]}}</view>
+      </view>
+    </picker> 
+    <view class='lineStyle'></view>
+    <view class='search' bindtap='inputclick'>
+      <image src='//public.wutongwan.org/public-20180519-Fl8PEuE4M7EK5Rdw5aE0vyCB2jSo'></image>
+      <input class='sch-ipt' placeholder="输入小区和地名" id='home_inp' disabled="true" placeholder-class="inpClass"></input>
+    </view>
+  </view>
+  <!--site end-->
+
+  <!--合租-->
+  <scroll-view class='scroll-part'  hidden="{{currentTab!==0}}" scroll-y="true" scroll-top="{{scrollTop}}"  scroll-with-animation="true" bindscrolltolower="scrollLoading"  bindscroll="scroll">
+
+  <!--轮播图-->
+   <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="500" circular="true" indicator-active-color='#3DBCC6' current='0' > 
+    <block wx:for="{{imgUrls}}" wx:for-index="index" wx:key="*this">
+      <swiper-item  bindtap='clickbanner' data-index='{{index}}'>
+        <image src="{{item}}" class="slide-image" mode="aspectFill"/>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!--导航条-->
+  <view class="navbar">
+    <view class='hezu-part' bindtap='list_hz'>
+      <image src='../../images/hz.png'></image>
+      <view>合租</view>
+    </view>
+    <view class='zhengzu-part' bindtap='list_zz'>
+      <image src='../../images/zz.png'></image>
+      <view>整租</view>
+    </view>
+    <view class='yezhu-part' bindtap='yezhu'>
+      <image src='../../images/yz.png'></image>
+      <view>业主加盟</view>
+    </view>
+  </view> 
+ 
+    <!--<view wx:for="{{navbar}}" wx:if="{{index==1?zzData:true}}" data-idx="{{index}}" scroll-with-animation="true" class="item nav{{index}} {{currentTab==index ? 'active' : ''}}" wx:key="unique" bindtap="navbarTap">
+    <image src='{{item.navImg}}'></image>
+    <view>{{item.navName}}</view>
+    </view>   -->
+    <view class='hezu'>
+      <block wx:for="{{home_list}}" wx:key="{{index}}">
+        <navigator class='index-model' url="../detail/detail?id={{item.public_id}}&rent_type={{item.rent_type}}&from_app=">
+          <image src="{{item.list_pic}}" class='index-img'></image>
+          <text class='index-address'>{{item.name}}</text>
+          <view class='index-subway'>
+            <image wx:if="{{item.nearest_subway_title!== ''}}" class='local-img' src='../../images/local.png'></image>
+            <image wx:else class='local-img' style='width:26rpx;' src='//public.wutongwan.org/public-20180519-Fm2GaCG3Mvr9dG2TochlN6XAuZ5H'></image>
+            <text wx:if="{{item.nearest_subway_title!== ''}}" > {{item.nearest_subway_title}}</text>
+            <text wx:else > {{item.direction}} | {{item.area}} | {{item.floor_num}}楼</text>
+          </view>
+
+          <view class='index-price'>
+              ￥{{item.price}}
+              <text class='index-month'>{{item.price_unit}}</text>
+          </view> 
+        </navigator>
+        <view class='tryTag' wx:if="{{index==4}}">
+          <text class='tag-text'>试试用标签筛选房源</text>
+          <view class='tag-part'>
+            <block wx:for="{{tagName}}" wx:key="{{index}}">
+              <view class="btn-select" bindtap="listPage" data-index="{{index}}" data-select="{{item.select}}">
+                <text class='btn-text'>{{item.catalogName}}</text>
+              </view>
+            </block>
+          </view>
+        </view>
+        <view class='hr'></view>
+      </block>
+      
+    </view>
+    <view class='moreBtn'>
+      <view class='moreRoom' bindtap='moreToList'>查看更多房源</view>
+    </view>
+    
+  </scroll-view>
+
+  <view class='tabBar'>
+     <view class='tb_index'>
+      <image src='{{index_img}}'></image>
+      <view class="{{tabcolor == 1?'activeTab':''}}">{{index_tit}}</view>
+    </view>
+    <view class='tb_list' bindtap='toList'>
+      <image src='{{list_img}}'></image>
+      <view class="{{tabcolor == 2?'activeTab':''}}">{{list_tit}}</view>
+    </view>
+    <view class='tb_user' bindtap='toUser'>
+      <image src='{{user_img}}'></image>
+      <view class="{{tabcolor == 3?'activeTab':''}}">{{user_tit}}</view>
+    </view> 
+  </view>
+
+  <view class='backTop' bindtap='backTop'  wx:if="{{floorstatus && currentTab !== 2}}" >
+     <image src='//public.wutongwan.org/public-20180519-FsZv9aQaob4hwU7aqldrrE6Kdo5j'></image>
+  </view>
+</view>
+
+
+
+
+
+  <view class='active_part' wx:if='{{close_act}}'>
+    <image src='../../images/act_index_btn.png' class='act_index_btn' bindtap='toActive' animation="{{toActive_animtion}}"></image>
+    <image src='../../images/act_ind_close.png' class='act_ind_close'></image>
+    <view class='real_close' bindtap='close_act'></view>
+  </view>

@@ -1,0 +1,185 @@
+.page{
+  background: #fff;
+}
+
+.wt-list{
+  font-size: 36rpx;
+  background: #fff;
+}
+
+.wt-model{
+  height:120rpx;
+  line-height:120rpx;
+  border-bottom:1rpx solid #d9d9d9;
+  
+  padding:0 30rpx;
+  font-size: 32rpx;
+}
+
+.wt-text{
+  float: left;
+  color: #333;
+  width:130rpx;
+
+}
+
+.wt-model input{
+  height:120rpx;
+  padding-left:60rpx;
+}
+
+.wt-inp{
+  line-height: 120rpx;
+}
+
+.yzm{
+  float: right;
+  background: #3dbcc6;
+  border-radius:50rpx;
+  color:#fff;
+  vertical-align:middle;
+  height:60rpx;
+  line-height:60rpx;
+  margin-top:-90rpx;
+  position: relative;
+  z-index: 2;
+  width: 200rpx;
+  border: 1rpx solid #9d9d9d;
+  font-size: 28rpx;
+}
+
+.confirm{
+  text-align:center;
+  width:90%;
+  background:#3dbcc6;
+  height:80rpx;
+  color:#fff;
+  line-height:80rpx;
+  border-radius:10rpx;
+  margin:0 auto;
+  margin-top:100rpx;
+}
+
+.err-info{
+  font-size:28rpx;
+  color:#ef0d18;
+  text-align:center;
+  position:relative;
+   top:40rpx; 
+}
+
+.inp-class{
+  color:#b8b8b8;
+}
+
+.picker{
+  position:relative;
+  left:57rpx;
+  color:#b8b8b8;
+}
+
+.wt-model image{
+  width:20rpx;
+  height:35rpx;
+  float:right;
+  position:relative;
+  top:45rpx;
+  left:-10px;
+}
+
+.hidden{
+  position:fixed;
+  width:100%;
+  height:100%;
+  top:0px;
+  background:rgba(0,0,0,0.4);
+  z-index: 5;
+}
+
+.yzm-img{
+  width:80%;
+  height:440rpx;
+  background:#fff;
+  position:absolute;
+  z-index:6;
+  top:50%;
+  left:50%;
+  margin-top:-40%;
+  margin-left:-300rpx;
+  border-radius:10rpx;
+  text-align: center;
+}
+
+.yzm-title{
+  font-size:40rpx;
+  color:#333;
+  padding-top: 30rpx;
+}
+
+.inp_img{
+  border-bottom:1px solid #d9d9d9;
+  width:80%;
+  margin:0 auto;
+  margin-top:100rpx;
+  text-align:left;
+  /* padding-left:10rpx; */
+} 
+
+.inpYzm{
+  font-size: 36rpx;
+  color: #999;
+  /* margin-top: -10rpx;  */
+}
+
+.yzmImage{
+  float:right;
+  position:relative;
+  top:-112rpx;
+  left:-55rpx;
+}
+
+.yzmImage view{
+  font-size:22rpx;
+  color: #3dbcc6;
+}
+
+.yzmImage image{
+  width:150rpx;
+  height:60rpx;
+}
+
+.yzm-qd{
+  width:80%;
+  height:90rpx;
+  line-height:90rpx;
+  margin:0 auto;
+  margin-left:10%;
+  clear:both;
+  margin-top:-52rpx;
+  position:relative;
+  top:-40rpx;
+  border-radius:10rpx;
+  background: #3dbcc6;
+  color:#fff;
+}
+
+.erryzmText{
+  font-size:26rpx;
+  margin-top:10rpx;
+  margin-left:60rpx;
+  color:#e60e0e;
+  width:300rpx;
+  text-align: left;
+}
+
+.online{
+  text-align:center;
+  padding: 70rpx 0;
+}
+
+.online image{
+  width:432rpx;
+  height:415rpx;
+}
+
+

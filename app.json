@@ -1,0 +1,34 @@
+{
+  "pages":[  
+    "pages/index/index",
+    "pages/qa_active/qa_active",
+    "pages/qa_active_fin/qa_active_fin",
+    "pages/coupon/coupon",
+    "pages/login/login",
+    "pages/active/active",
+    "pages/active_cb/active_cb",
+    "pages/loginPhone/loginPhone",
+    "pages/user/user",
+    "pages/detail/detail",
+    "pages/bannerPage/bannerPage",
+    "pages/changePhone/changePhone",
+    "pages/config/config",
+    "pages/list/list",
+    "pages/search/search",
+    "pages/yuyue/yuyue",
+    "pages/weituo/weituo",
+    "pages/payment/payment",
+    "pages/wtSuccess/wtSuccess",
+    "pages/yySuccess/yySuccess",
+    "pages/more/more",
+    "pages/yezhu/yezhu",
+    "pages/yezhu_new/yezhu_new"
+  ],
+  "window":{
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#3DBCC6",
+    "navigationBarTitleText": "蛋壳公寓",
+    "navigationBarTextStyle": "#fff",
+    "enablePullDownRefresh": false
+  }
+}

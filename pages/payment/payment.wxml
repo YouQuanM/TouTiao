@@ -1,0 +1,29 @@
+<view class='page'>
+  <view class='paymentTitle'>付款方式</view>
+  <block wx:for="{{paymentList}}">
+    <view class='payPart'>
+      <view class='payType'>
+        <view class='payYear'>{{item.payment_type}}</view>
+        <view class='bestPirce' wx:if='{{item.is_cost_effective}}'>最划算</view>
+      </view>
+      <view class='deposit'>押金 : {{item.deposit}}</view>
+      <view class='serverPay'>服务费 + 维修金 : {{item.service_repair}}</view>
+      <view class='price'>{{item.rent}}</view>
+    </view>
+  </block>
+  <view class='JG'></view>
+  <view class='serverFix'>
+    <view class='serFix-title'>服务费+维修金说明</view>
+    <view class='serFix-detail'>更好的居住体验，更便捷高质量的服务，更舒适的生活。“一点付出，百倍享受。”蛋壳公寓现推出：</view>
+    <view class='ser-pay'>服务费:</view>
+    <view class='ser-detail'>仅需支付房屋月租价格的7%，便可超值享受保洁服务（新居，双周）、高速宽带服务、400客服热线、管家服务。</view>
+    <view class='fix-pay'>维修金:</view>
+    <view class='fix-detail'>仅需支付房屋月租价格的1%，便可超值享受主体维修、电器维修、水暖维修、电路维修、灯具维修、橱柜维修、锁具维修（具体维修内容以房屋租赁合同为准）。</view>
+  </view>
+  <view class='deposit-all'>
+    <view class='deposit-title'>押金说明</view>
+    <view class='deposit-detail'>
+      用于担保租客及时、足额支付租金等其他费用；用于租客未完整履行合同给蛋壳造成损害时的赔偿。押金的返还：租赁关系终止时，租客依约返还了租赁物、缴清全部款项等，且并无其它不履行合同义务情形的，蛋壳应返还押金或已扣除损害赔偿后的余额。
+    </view>
+  </view>
+</view>

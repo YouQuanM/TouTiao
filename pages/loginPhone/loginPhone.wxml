@@ -1,0 +1,25 @@
+<view class='page'>
+  <web-view wx:if='{{userPrivacy}}' src='https://www.dankegongyu.com/zhuanti/user-privacy'></web-view>
+  <view class='title_style'>登录蛋壳公寓</view>
+
+  <input class='inputstyle' placeholder="请输入手机号" id='phoneNum' placeholder-class="inpClass" type='num' maxlength='11' bindinput ="phoneNumInput"></input>
+  <input class='inputstyle' placeholder="请输入验证码" id='yzm' placeholder-class="inpClass" type='num' maxlength='4' bindinput ="yzmInput"></input>
+  <button class='yzm' disabled='{{disabled}}' data-id="2" bindtap="getVerificationCode" style='background:#fff;'>
+        {{time}}
+  </button>
+   <!-- <view class='yzm'>获取验证码</view>  -->
+  <view class='err-info'>
+    <text>{{errInfo}}</text>
+  </view>  
+  <view class='login' disabled='{{disable_con}}' bindtap="confirm" style='background:{{bg_con}}'>登录</view>
+  <view class='clause'>登录即代表你同意 <text bindtap='toSecrecy'>《用户使用条款和隐私声明》</text></view>
+
+  <view hidden="{{flag}}" class='hidden'>
+    <view class='yzm-img'>
+      <view class='yzm-title'>{{errImg}}</view>
+      <image src='{{yzmPhone}}'  bindtap='changeImg'></image>
+      <input class='inp_img' placeholder='不区分大小写' placeholder-class='inpYzm' value="{{yzmimgValue}}" bindinput ="yzmimgInput" maxlength='5'></input>
+      <view class="yzm-qd" bindtap='yzmqd' style='background:{{confirm_bg}}'>提交</view>
+    </view>
+  </view> 
+</view>

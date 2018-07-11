@@ -1,0 +1,42 @@
+.page{
+  padding: 50rpx 30rpx;
+}
+
+.roomData{
+  border-bottom:1px solid #e4e8eb;
+  padding-bottom:50rpx;
+}
+
+.more-title,.publi-title{
+  font-size:36rpx;
+  padding-bottom:15rpx;
+  border-bottom:1px solid #e4e8eb;
+}
+
+.more-info image{
+  width:60rpx;
+  height:60rpx;
+}
+
+.more-info view{
+  font-size: 24rpx;
+}
+
+.more-info{
+  display: inline-block;
+  width:20%;
+  text-align:center;
+  margin-top:50rpx;
+}
+
+.publicData{
+  padding-top:50rpx;
+}
+
+
+
+
+
+
+
+

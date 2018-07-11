@@ -1,0 +1,244 @@
+page{
+  height: 100%;
+  background: #F7F8F9;
+}
+
+.swiper-tab {
+  width: 100%;
+  text-align: center;
+  line-height: 80rpx;
+  background-color:white;
+  position:fixed;
+  top:0;
+  z-index:10;
+}
+
+.swiper-tab-list {
+  font-size: 30rpx;
+  display: inline-block;
+  width: 33%;
+  color: #777;
+  border-bottom: 0rpx;
+  position:relative;
+  z-index:10;
+}
+
+.on {
+  color: #3DBCC6;
+}
+
+.swiper-box {
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.swiper-box view {
+  text-align: center;
+}
+
+.borderLine{
+  width:50%;
+  margin:0 auto;
+}
+
+.active{
+  border-bottom:4rpx solid #3dbcc6;
+  color:#3dbcc6;
+}
+
+.top_part{
+  display:flex;
+}
+
+
+.noUse{
+  padding: 30rpx 30rpx;
+  position:absolute;
+  top:80rpx;
+}
+
+.overdue,.used{
+  padding: 30rpx 30rpx;
+  position:absolute;
+  top:50rpx;
+}
+
+.inputstyle{
+  width:346rpx;
+  height:60rpx;
+  border:1px solid #e5e5e5;
+  border-radius:10rpx 0 0 10rpx;
+  padding-left: 50rpx;
+  font-size: 28rpx;
+}
+
+.exchange{
+  width:156rpx;
+  height:60rpx;
+  background:#ccc;
+  font-size:26rpx;
+  color:#fff;
+  border-radius:0 10rpx 10rpx 0;
+  text-align:center;
+  line-height:60rpx;
+}
+
+.inpClass{
+  font-size: 26rpx;
+  color: #ccc;
+}
+
+.explain image{
+  width: 30rpx;
+  height: 30rpx;
+  margin-top:7rpx;
+  margin-right:7rpx;
+}
+
+.explain view{
+  font-size: 28rpx;
+  color: #999;
+}
+
+.addCoupon,.explain{
+  display:flex;
+}
+
+.explain{
+  margin-left: 40rpx;
+  margin-top: 10rpx;
+}
+
+.djq,.xjq,.zkq{
+  position: relative;
+  margin-bottom:10rpx;
+}
+
+.djq_title{
+  width: 62rpx;
+  height: 200rpx;
+}
+
+.djq_money{
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.djq_sm{
+  width: 425rpx;
+  height: 200rpx;
+}
+
+.coupon_part{
+  margin-top: 30rpx;
+  margin-bottom:50rpx;
+}
+
+.title_text{
+  position:absolute;
+  width:10rpx;
+  font-size:24rpx;
+  color:#fff;
+  top:50rpx;
+  left:17rpx;
+}
+
+.money{
+  color:#F68D81;
+  font-size:66rpx;
+  margin-top:55rpx;
+}
+
+.money text{
+  font-size:40rpx;
+}
+
+.money_part{
+  position:absolute;
+  width:200rpx;
+  height:200rpx;
+  top:0rpx;
+  left:60rpx;
+  text-align:center;
+}
+
+.xjq .money{
+  color:#FDC350;
+  font-size:66rpx;
+  margin-top:55rpx;
+}
+
+.servers{
+  position:absolute;
+  color:#2D2D2D;
+  font-size:28rpx;
+  top:30rpx;
+  left:41%;
+  width:385rpx;
+  border-bottom:1px dashed #999;
+  height:90rpx;
+}
+
+.sm1{
+  position:absolute;
+  font-size:18rpx;
+  color:#999;
+  top:64%;
+  left:41%;
+}
+
+.sm2{
+  position:absolute;
+  font-size:18rpx;
+  color:#999;
+  top:76%;
+  left:41%;
+}
+
+.overdue .money,.used .money{
+  color: #CACACA;
+}
+
+.overdue_img,.used_img{
+  width:181rpx;
+  height:153rpx;
+  position:absolute;
+  right:15rpx;
+  top:20rpx;
+}
+
+.noCoupon image,.noCoupon_else image{
+  width:190rpx;
+  height:211rpx;
+}
+
+.noCoupon view,.noCoupon_else view{
+  font-size: 30rpx;
+  color: #333;
+}
+
+.noCoupon{
+  position:absolute;
+  top:180%;
+  left:35%;
+  width:211rpx;
+  text-align:center;
+}
+
+.noCoupon_else{
+  position:absolute;
+  top:265rpx;
+  left:265rpx;
+  width:211rpx;
+  text-align:center;
+}
+
+.copyright{
+  position:absolute;
+  bottom:25rpx;
+  color:#bababa;
+  font-size:26rpx;
+  left:9%;
+}

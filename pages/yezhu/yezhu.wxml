@@ -1,0 +1,77 @@
+<view class='page'>
+  <scroll-view class='scroll-part' scroll-y="ture">
+    <image class='banner-img' src='https://public.wutongwan.org/public-20171221-Fq5sOroIO34Tba7_6JIzZb176eoB'></image>
+    <view class='yz-part1'>
+      <view class='part1-title1'>做省心房东，只需4步</view>
+      <view class='part1-title2'>房屋出租交给蛋壳公寓，做省心房东</view>
+      <view class='yz-tag'>
+        <view class='tag-part1'>
+          <image class='img1' src='https://public.wutongwan.org/public-20171221-Fh3rOjTKuJlb_fgbRN3fwuRo3lw4'></image>
+          <image class='img2'  src='https://public.wutongwan.org/public-20171222-FsRo57f2X-XwMQJ5JqNuWBXbdF6-'></image>
+          <view class='yz-text'>意向沟通</view>
+        </view>
+        <view class='tag-part2'>
+          <image class='img1' src='https://public.wutongwan.org/public-20171221-Fs09v7s9LdEtKdwLwjz9eeIATu9s'></image>
+          <image class='img2' src='https://public.wutongwan.org/public-20171222-FpKAzjLWb4wWJ4Vwlma5k80wurbT'></image>
+          <view class='yz-text'>实勘测量</view>
+        </view>
+        <view class='tag-part1'>
+          <image class='img1' src='https://public.wutongwan.org/public-20171221-FhlZ5uNtBO7to-zkfxaMum9iRKI4'></image>
+          <image class='img2' src='https://public.wutongwan.org/public-20171222-Fii8FlQTqtwQWv6Ml4qRciZrnmsi'></image>
+          <view class='yz-text'>合作签约</view>
+        </view>
+        <view class='tag-part2'>
+          <image class='img1' src='https://public.wutongwan.org/public-20171221-FqKFZw-kQmYLsZdGjrEhmg53JBXB'></image>
+          <image class='img2' src='https://public.wutongwan.org/public-20171222-FtL9swrrmosOc-IuCQYqfUfn3V1y'></image>
+          <view class='yz-text'>坐享收益</view>
+        </view>
+      </view>
+
+      <view class='clear'></view>
+      <view>
+        <view class='yz-btn' bindtap='weituo'>
+          <text>立即委托</text>
+        </view>
+        <view class='server-detail'>
+          <view class='phone-num'>400-062-8688</view>
+          <view class='yz-detail'>服务时间：9:00 - 21:00（节假日照常）</view>
+        </view>
+      </view> 
+    </view>
+    <view class='yz-part2'>
+      <view class='yz-sm1'>
+        <image class='sm-img1' src='https://public.wutongwan.org/public-20180105-Fjx47nI1H6Fl_VoUct1UM1WNUz5K'></image>
+        <view class='sm-text'>
+          <view class='sm-title'>稳定高收益</view>
+          <view>1、蛋壳保证与业主签署合同后及时打款。</view>
+          <view>2、在房屋整个租期内，有蛋壳专业管家打理，省心省力，坐享收益。</view>
+          <view>3、房屋升级改造，配置全套家具、家电，实现高额增值服务。</view>
+        </view>
+      </view>
+      <view class='yz-sm1'>
+        <image class='sm-img2' src='https://public.wutongwan.org/public-20171220-Fn6Pxz7p7k2LTbnOE7Hm3GohbVoE'></image>
+        <view class='sm-text'>
+          <view class='sm-title'>省时省心</view>
+          <view>1、蛋壳提供“一站式全程托管”服务，在租期内出现的任何生活、物业问题，将由蛋壳管家进行解决，让您省时省心。</view>
+          <view>2、蛋壳将至少每两周对公共区域进行保洁和物品检查，将最大程度的维护房屋安全和保障。</view>
+        </view>
+      </view>
+      <view class='yz-sm1'>
+        <image class='sm-img2'  src='https://public.wutongwan.org/public-20171220-FgGLnorxXlPAHPAyneQfwYcPalor'></image>
+        <view class='sm-text'>
+          <view class='sm-title'>安全无忧</view>
+          <view>1、出租人群严格筛选，高素质租户。</view>
+          <view>2、租约结束后，蛋壳会为您的房子做深度保洁。</view>
+        </view>
+      </view>
+      <view>
+        <view class='yz-btn'>
+          <text bindtap='weituo'>立即委托</text>
+        </view>
+        <view class='server-detail2'>
+          <view class='yz-detail'>房屋出租交给蛋壳公寓，做省心房东</view>
+        </view>
+      </view> 
+    </view>
+  </scroll-view>
+</view>

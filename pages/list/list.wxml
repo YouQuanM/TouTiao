@@ -1,0 +1,197 @@
+<view class='page'>
+  <view class='top-site'>
+    <!-- <picker class='header-mean' bindchange="changeArea" value="{{areaIndex}}" range="{{areaList}}">
+      <view class="hd"></view>
+      <view class='site-city'>
+        <view class='site-city-val'>{{areaList[areaIndex]}}</view>
+      </view>
+    </picker>  -->
+    <view class='search' bindtap='inputclick'>
+      <image src='//public.wutongwan.org/public-20180519-Fl8PEuE4M7EK5Rdw5aE0vyCB2jSo'></image>
+      <input class='sch-ipt' placeholder="{{placeholder}}" value="{{search_text.search_text}}" id='home_inp' disabled="true" placeholder-class='listInt'></input>
+    </view>
+  </view>
+
+  <view class='list-Nav'>
+    <view class='Nav-tag' bindtap='rentEvt' data-nav='0'>
+      <text class="{{colorRent==0?'':'blue'}}">{{colorRent==0?"合/整租":textRent}}</text>
+      <view class='nav-icon icon-hzz'></view>
+    </view>
+    <view class='Nav-tag {{resultPosText=="位置"?"":"blue"}}' bindtap='rentEvt' data-nav='1'>
+      <text>{{resultPosText}}</text>
+      <view class='nav-icon'></view>
+    </view>
+    <view class='Nav-tag {{resultPriceText=="价格"?"":"blue"}}' bindtap='rentEvt' data-nav='2'>
+      <text>{{resultPriceText}}</text>
+      <view class='nav-icon'></view>
+    </view>
+    <view class='Nav-tag {{moreSelect==""?"":"blue"}}' bindtap='rentEvt' data-nav='3'>
+      <text>更多</text>
+      <view class='nav-icon'></view>
+    </view>
+  </view>
+  
+  <!-- 筛选层 -->
+  <view class='layer-box' wx:if="{{layerBox}}" bindtap='closeLayer'>
+    <!-- 合租整租 -->
+    <view class='layer-rent' wx:if='{{showLayer[0]}}' catchtap='default'>
+      <view class="{{colorRent==index?'blue':''}}" wx:for="{{layerRent}}" data-index="{{index}}" data-text="{{item.title}}" catchtap="selectRentType" data-code="{{item.code}}">{{item.title}}</view>
+    </view>
+    <!-- 位置  -->
+    <view class='layer-pos-box' wx:if='{{showLayer[1]}}' catchtap='default'>
+       <!--一级-->
+       <view class='first'>
+           <view class="{{showPos==0?'blue':''}}" catchtap="posEvt" data-index="0">不限</view>
+           <!-- <view class="{{showPos==1?'blue':''}}" catchtap="posEvt" data-index="1">附近</view> -->
+           <view class="{{showPos==2?'blue':''}}" catchtap="posEvt" data-index="2">地铁</view>
+           <view class="{{showPos==3?'blue':''}}" catchtap="posEvt" data-index="3">区域</view>
+       </view>
+
+       <!--二级-->
+       <scroll-view class='second' scroll-y="true" lower-threshold="50" wx:if="{{secondBox}}">
+           <!--附近-->
+           <view class='layer-near' catchtap='selectPos' wx:if="{{showPos==1}}">
+              <view wx:for="{{layerPos}}" catchtap="selectNear" data-code="{{item.code}}">{{item.title}}</view>
+          </view> 
+          <!--地铁线路-->
+           <view class='layer-subway' catchtap='selectPos' wx:if="{{showPos==2}}">
+              <view class="{{textSubway==item.subway_name?'blue':''}}" wx:for="{{layerSubway}}" catchtap="subwayEvt" data-index="{{index}}" data-name="{{item.subway_name}}">{{item.subway_name}}</view>
+          </view>
+
+          <!--区域-->
+           <view class='layer-area' catchtap='selectPos' wx:if="{{showPos==3}}">
+              <view class="{{textTrade==item.area_name?'blue':''}}" wx:for="{{layerArea}}" catchtap="areaEvt" data-index="{{index}}" data-name="{{item.area_name}}">{{item.area_name}}</view>
+          </view> 
+          
+       </scroll-view>
+
+       <scroll-view class='three'scroll-y="true" lower-threshold="50" wx:if="{{secondBox&&threeBox}}">
+           <!--地铁站-->
+           <view class='layer-station' wx:if="{{showStation}}">
+              <view  wx:for="{{layerSubway}}" data-index="{{index}}" wx:if="{{showSubwayList==index}}">
+                   <view  wx:for="{{item.data}}" catchtap="selectStation" data-index="{{index}}" data-station="{{item}}" class="{{resultPosText==item?'blue':''}}">{{item}}</view>
+              </view>
+           </view>  
+
+           <!--商圈  -->
+           <view class='layer-trade' wx:if="{{showTrade}}">
+              <view wx:for="{{layerArea}}" data-index="{{index}}" wx:if="{{showTradeList==index}}">
+                  <view wx:for="{{item.data}}" catchtap="selectTrade" data-index="{{index}}" data-name="{{item}}" class="{{resultPosText==item?'blue':''}}">{{item}}</view>
+              </view>
+           </view>
+       </scroll-view>
+    </view>
+    <view class='layer-price' wx:if='{{showLayer[2]}}' catchtap='default'>
+        <view wx:for="{{layerPrice}}" catchtap='selectPrice' data-code="{{item.code}}" data-title="{{item.title}}" data-index="{{index}}" class="{{colorPrice==index?'blue':''}}">{{item.title}}</view>
+        <view class='custom'>
+            <view class='both-price'>
+              <text class='start-price'>￥{{startPrice}}</text> -
+              <text class='start-price'>￥{{endPrice}}</text>
+            </view>
+            <view class="slider-box">
+              <view class='grayline l1' style='width:{{block1}}'></view>
+              <view class='slider s1' style='left:{{block1}}' catchtouchmove="sliderMoveLeft" catchtouchstart='sliderMoveLeft' ></view>
+              <view class='blueline'></view>
+              <view class='slider s2' style='right:{{block2}}' catchtouchmove="sliderMoveRight" catchtouchstart='sliderMoveRight' ></view>
+              <view class='grayline l2' style='width:{{block2}}'></view>
+            </view>
+            <view class='submit-btn'>
+                <view catchtap="resetCustomPrice" class='reset'>重置</view>
+                <view catchtap='selectCustomPrice' class='sure'>确定</view>
+            </view> 
+        </view>
+    </view>
+    <view class='layer-more' wx:if='{{showLayer[3]}}' catchtap='default'>
+      <scroll-view scroll-y="true" lower-threshold="50">
+          <view class="more-type" type-select="radio" wx:for="{{layerTags}}">
+              <view class='type-title' data-code="{{item.title}}">{{item.title}}</view> 
+                <view class='type-list {{item.filter_type=="orders"?"col-3":""}}'>
+                  <text wx:key="{{index}}" wx:for="{{item.data}}" 
+                        data-type="{{item.filter_type}}" 
+                        catchtap='selectMore'  
+                        wx:for-item="list" 
+                        wx:key="id" 
+                        data-index="{{index}}" 
+                        data-code="{{list.code}}
+                        class="{{item.filter_type=='feature'&&moreRoomFtArr[index]==1 || item.filter_type=='status'&&moreRoomStaArr[index]==1 || item.filter_type=='room_type'&&moreHtArr[index]==1 || item.filter_type=='direction'&&moreOtnArr[index]==1 || item.filter_type=='orders'&&moreSortArr[index]==1?'on':''}}"
+                  >{{list.title}}
+                  </text>
+              </view> 
+          </view>
+        </scroll-view>
+        <view class='submit-btn'>
+              <view catchtap="resetCustomMore" class='reset'>重置</view>
+              <view catchtap='selectCustomMore' class='sure'>确定</view>
+          </view>
+    </view>
+  </view>
+
+  <!-- 列表房源 -->
+  <!-- url="../detail/detail?id={{item.id}}"  -->
+  <scroll-view class="container-body" scroll-y="true" scroll-top="{{scrolltop}}" bindscroll="scrollHandle" lower-threshold="50" bindscrolltolower="scrollLoading" style="{{tabBarHas?'padding-bottom:100rpx;':''}}">
+
+
+    <view class='recommend' wx:if="{{!!recommend_title}}">
+      <image src='//public.wutongwan.org/public-20180519-FvM26bpDF-A9hH3114htaZeK3tLw'></image>
+      <!-- <view>为您推荐 {{recommend_title}} 附近房源</view> -->
+      <view>{{recommend_title}}</view>
+    </view>
+
+
+		<navigator class="conference-item" wx:for="{{roomList}}"  wx:key="{{item.id}}" url="../detail/detail?id={{item.public_id}}&rent_type={{item.rent_type}}&from_app=">
+			<!-- <block wx:for="{{room_list.nearby_house}}"> -->
+        <view class='room-detail'>
+          <view class='room-img'>
+            <image src='{{item.list_pic}}'></image>
+            <view wx:if="{{item.rent_type == 1}}">
+              <view class='title_font'>整</view>
+            </view>
+            <view wx:if="{{item.rent_type == 2}}">
+              <view class='title_font'>合</view>
+            </view>
+            <view wx:if="{{item.rent_type == 3}}">
+              <view class='title_font'>月</view>
+            </view>
+          </view>
+          <view class='roomOther-info'>
+            <view class='other-title'>{{item.name}}</view>
+            <view class='detail-info'>
+              <image src='../../images/room.png'></image>
+              <text>{{item.direction}} | {{item.area}} | {{item.floor_num}}楼</text>
+            </view>
+            
+            <view class='distence-info' wx:if="{{item.nearest_subway_title!=''}}">
+              <image src='../../images/local.png'></image>
+              <text>{{item.nearest_subway_title}}</text>
+            </view>
+            
+            <view class='otherroom-tag'>
+               <block wx:key="{{index}}" wx:for="{{item.list_tags}}" wx:for-index="index">
+                <view wx:if="{{index<3}}">{{item}}</view>
+              </block> 
+            </view>
+          </view>
+          <view class='room-price'><text>¥{{item.price}}</text> {{item.price_unit}}</view>
+        </view>
+      <!-- </block> -->
+		</navigator>
+    
+    <view class='no_room' wx:if='{{no_room}}'>
+      <image src='//public.wutongwan.org/public-20180519-Foj_7KM9Lf6nd3jSK7NJXPLAVuRN'></image>
+    </view>
+	</scroll-view>
+  <view class='tabBar' wx:if='{{tabBarHas}}'>
+    <view class='tb_index' bindtap='toIndex'>
+      <image src='{{index_img}}'></image>
+      <view class="{{tabcolor == 1?'activeTab':''}}">{{index_tit}}</view>
+    </view>
+    <view class='tb_list' >
+      <image src='{{list_img}}'></image>
+      <view class="{{tabcolor == 2?'activeTab':''}}">{{list_tit}}</view>
+    </view>
+    <view class='tb_user' bindtap='toUser'>
+      <image src='{{user_img}}'></image>
+      <view class="{{tabcolor == 3?'activeTab':''}}">{{user_tit}}</view>
+    </view> 
+  </view>
+</view>  

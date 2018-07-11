@@ -1,0 +1,494 @@
+.page{
+  width: 100%;
+  overflow: hidden;
+  margin-bottom:120rpx;
+
+}
+
+ swiper{
+  height: 480rpx;  
+} 
+
+.slide-image{
+  height:100%;
+}
+
+.detailTitle{
+  width: 100%;
+  height: 120rpx;
+  margin-top: 20rpx;
+  padding: 30rpx;
+}
+
+.phone-num{
+  width:27%;
+  border-left:1px solid #efefef;
+  float:right;
+  box-sizing:border-box;
+  text-align:center;
+  padding-right:30rpx;
+}
+
+.title-text{
+  width: 70%;
+  font-size: 46rpx;
+  float: left;
+  color: #333;
+}
+
+.phone-num image{
+  width:110rpx;
+  height:110rpx;
+}
+
+.phone-num view{
+  font-size: 30rpx;
+  color: #666;
+}
+
+.share{
+  width:40rpx;
+  height:40rpx;
+  position:absolute;
+  top:30rpx;
+  right:30rpx;
+}
+
+.shareBtn{
+  width:135rpx;
+  height:50rpx;
+  position:absolute;
+  top:665rpx;
+  right:25rpx;
+  opacity:0; 
+  border:1px solid #000;
+  float:right;
+}
+
+.detail-address{
+  margin: 0 30rpx;
+  padding-bottom:30rpx; 
+  border-bottom: 1px solid #e4e8eb;
+}
+
+.detail-type{
+  font-size:24rpx;
+  color:#666;
+}
+
+.detail-type text{
+  font-size: 24rpx;
+}
+
+.address-info image{
+  width:20rpx;
+  height:24rpx;
+}
+
+.address-info text{
+  font-size:24rpx;
+  color: #c9c9c9;
+  margin-left:20rpx;
+}
+
+.pirceDetail{
+  padding: 30rpx;
+  font-size: 28rpx;
+  /* font-weight: bold; */
+  color: #999;
+  border-bottom:10px solid #eaeced;
+}
+
+.price-info text{
+  font-size:40rpx;
+  color: #ff001f;
+  font-weight:bold;
+}
+
+.rightJt{
+  width:0rpx;
+  height:0rpx;
+  border:10rpx solid transparent;
+  border-left-color:#999; 
+  position:relative;
+  top:10rpx;
+  left:20rpx;
+}
+
+.price-info{
+  float:left;
+}
+
+.price-type{
+  float:right;
+  display:flex;
+  flex-direction:row;
+  margin-top:15rpx;
+  width:146rpx;
+}
+
+.price-part{
+  clear:both;
+  flex-direction:row;
+}
+
+.price-tag{
+  display: inline-block;
+  border:1px solid #C0C4C7;
+  padding:5rpx 15rpx;
+  font-size:22rpx;
+  margin-right:20rpx;
+  margin-top:20rpx;
+  color:#959D9F;
+  font-weight:normal;
+  
+}
+
+.activity{
+  font-size:24rpx;
+  margin-top:30rpx;
+}
+
+.activity-title{
+  padding:10rpx 25rpx;
+}
+
+.activity-info{
+  margin-left:20rpx;
+}
+
+.roominfo-detail{
+  padding:30rpx;
+  border-bottom:5px solid #edeeef;
+}
+
+.room-detail{
+  padding:30rpx 0rpx;
+  border-bottom:1px solid #f7f8f9;
+  display: flex;
+  position:relative;
+}
+
+.room-title{
+  font-size:36rpx;
+  color:#333;
+}
+
+.room-info{
+  font-size:32rpx;
+  color:#999;
+}
+
+.room-info text{
+  width:100rpx;
+  display:inline-block;
+  margin-top:30rpx;
+}
+
+.facility-config{
+  border-bottom:1px solid #e4e8eb;
+  height:250rpx;
+  margin:30rpx;
+}
+
+.config-title{
+  font-size:36rpx;
+  color:#333;
+  margin-bottom:30rpx;
+}
+
+.config-info image{
+  width:60rpx;
+  height:60rpx;
+}
+
+.config-info view{
+  font-size: 28rpx;
+  color: #666;
+}
+
+.config-info{
+  display:inline-block;
+  width:20%;
+  text-align:center;
+}
+
+.server{
+  margin: 30rpx;
+  border-bottom: 1px solid #e4e8eb;
+}
+
+.server-info image{
+  width:68rpx;
+  height:68rpx;
+  margin-left:40rpx;
+}
+
+.server-info{
+  margin-bottom:40rpx;
+}
+
+.server-title{
+  font-size:36rpx;
+  color:#333;
+  margin-bottom:30rpx;
+}
+
+.server-part{
+  display:inline-block;
+  width:70%;
+  margin-left:55rpx;
+}
+
+.server-line1{
+  font-size:36rpx;
+  color:#858585;
+}
+
+.server-line2{
+  color:#9a9a9a;
+  font-size:24rpx;
+}
+
+.nearby-title{
+  font-size:36rpx;
+  color:#333;
+  margin-bottom:30rpx;
+  margin-left:30rpx;
+  margin-top:50rpx;
+}
+
+.nearby-info{
+  font-size:26rpx;
+  color:#6e6e6e;
+  margin: 0 auto;
+  width: 85%;
+  margin-top:50rpx;
+}
+
+.go-out{
+  margin-top:30rpx;
+}
+
+.nearOther{
+  padding:50rpx 30rpx;
+  position: relative;
+}
+
+.nearOther-title{
+  font-size:36rpx;
+  color:#333;
+}
+
+.room-img{
+  position: relative;
+}
+
+.room-img image{
+  width: 260rpx;
+  height: 180rpx;
+}
+
+.roomImghz,.roomImgzz{
+    position:absolute;
+    width:35rpx;
+    font-size:28rpx;
+    color:#fff;
+    top:0rpx;
+}
+
+.roomImghz{
+  background:#3dbcc5;
+}
+
+.roomImgzz{
+  background:#ff4c59;
+}
+
+
+.roomOther-info{
+  font-size: 26rpx;
+  margin-left:30rpx;
+  position:relative;
+
+}
+
+.other-title{
+  width:420rpx;
+  font-size:30rpx;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  overflow:hidden;
+  color:#000;
+}
+
+.detail-info{
+  margin-top: 15rpx;
+}
+
+.detail-info image{
+  width:25rpx;
+  height:24rpx;
+}
+
+.detail-info text{
+  margin-left:15rpx;
+}
+
+.distence-info{
+  margin-top:5rpx;
+
+}
+
+.distence-info image{
+  width:24rpx;
+  height:24rpx;
+}
+
+.distence-info text{
+  margin-left:15rpx;
+}
+
+.room-price{
+  position:absolute;
+  top:77rpx;
+  right:-5px;
+  font-size:26rpx;
+  color:#333;
+}
+
+.room-price text{
+  font-size: 32rpx;
+  color: #ff001f;
+}
+
+.otherroom-tag{
+  display:flex;
+  font-size:22rpx;
+  margin-top:10rpx;
+
+}
+
+.otherroom-tag view{
+  border:1px solid #bfc4c5;
+  color:#a9afb1;
+  padding:5rpx 10rpx;
+  margin-right:20rpx;
+}
+
+.foot-btn{
+  display:flex;
+  height:100rpx;
+  line-height:100rpx;
+  font-size:34rpx;
+  width:100%;
+  position:fixed;
+  bottom:0rpx;
+
+}
+
+.phone-app,.online-app{
+  width:50%;
+  text-align:center;
+  color:#fff;
+}
+
+.phone-app{
+  background:#fac543;
+}
+
+.online-app{
+  background:#3fbfbc;
+}
+
+.logo{
+  text-align:center;
+  margin-bottom:20rpx;
+}
+
+.logo image{
+  width: 194rpx;
+  height:66rpx;
+}
+
+.paymentType{
+  font-size:24rpx;
+  margin-top:16rpx;
+  display:inline-block;
+  margin-left:20rpx;
+}
+
+.roomOk{
+  color: #3dbcc6;
+}
+
+.share-new{
+  width:130rpx;
+  height:46rpx;
+  border:1px solid #53BEBF;
+  /* float:right; */
+  border-radius:100rpx;
+  margin-left:29px;
+  position:absolute;
+  right:25rpx;
+  font-size:24rpx;
+  text-align:center;
+  line-height:46rpx;
+  color:#53bebf;
+  top:665rpx;
+}
+
+.backApp{
+  width:135rpx;
+  background:#fff;
+  height:50rpx;
+  line-height:50rpx;
+  font-size:18rpx;
+  border-radius:100rpx;
+  border:1px solid #53BEBF;
+  color:#53BEBF;
+  position:absolute;
+  right:25rpx;
+  top:730rpx;
+}
+
+.back_index{
+  width:70rpx;
+  height:98rpx;
+  color:#fff;
+  font-size:24rpx;
+  position:relative;
+  z-index:1001;
+  top:-78rpx;
+  left:26rpx;
+  line-height: 30rpx;
+}
+
+.toIndex{
+  position:fixed;
+  bottom:80rpx;
+  right:20rpx;
+}
+
+.toindex_mask{
+  width:98rpx;
+  height:98rpx;
+  border-radius:100rpx;
+  background:#000;
+  opacity:0.5;
+  position:relative;
+  z-index:1000;
+}
+
+.toindex_word{
+  width:70rpx;
+  height:98rpx;
+  color:#fff;
+  font-size:24rpx;
+  position:relative;
+  z-index:1001;
+  top:-78rpx;
+  left:26rpx;
+  line-height: 30rpx;
+}
+

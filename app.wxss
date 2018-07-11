@@ -1,0 +1,163 @@
+site-city/**app.wxss**/
+view,input{
+  box-sizing: border-box;
+}
+image{
+  width: 100%;
+}
+page{
+  background:#f9f9f9;
+}
+
+.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.top-site {
+  position:fixed;
+  width:98%;
+  height:65rpx;
+  background:#3DBCC6;
+  padding:17rpx 30rpx;
+  z-index:1;
+  box-shadow: 0 7px 17px 0 rgba(61,188,198,0.30);
+}
+
+.top-site image {
+  float: left;
+  width: 180rpx;
+  height: 38rpx;
+  margin: 26rpx 0 0 32rpx;
+}
+
+.hd {
+  content: "";
+  height: 10rpx;
+  width: 10rpx;
+  border-width:  0 0 4rpx 4rpx;
+  border-color: #666;
+  border-style: solid; 
+  /* border: 2rpx solid #6c6c6c; */
+  transform: rotate(-45deg);
+  position: absolute;
+  top:26rpx;
+  left:100rpx;
+}
+
+.header-mean {
+  width:140rpx;
+  height:64rpx;
+  border-radius:50rpx;
+  margin-top:5rpx;
+  position:relative;
+  z-index:4;
+  margin-left:10rpx;
+}
+
+ .site-city {
+  position: relative;
+  width:60rpx;
+  top:12rpx;
+  left:-20rpx;
+  height: 40rpx;
+  line-height:40rpx;
+  overflow: hidden;
+} 
+
+.site-city-val {
+  font-size: 28rpx;
+  width:56rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  color: #666;
+}
+
+/*search*/
+.search{
+  position:relative;
+  width:92%;
+  left:10rpx;
+  top:-90rpx;
+}
+.search image{
+  position:absolute;
+  left:210rpx;
+  top:-4rpx;
+  display:block;
+  width:24rpx;
+  height:24rpx;
+  z-index:3;
+}
+
+.sch-ipt{
+  width: 100%;
+  height:64rpx;
+  padding-left:275rpx;
+  margin:26rpx 0;
+  font-size: 24rpx;
+  border-radius: 50rpx;
+  border:1px solid #e5e5e5;
+  background-color: #F6F7F8;
+}
+
+.lineStyle{
+  width:2rpx;
+  height:30rpx;
+  position:absolute;
+  background:#e5e5e5;
+  left:165rpx;
+  top:41rpx;
+  z-index:5;
+}
+
+.inpClass{
+  color: #999;
+}
+
+.tabBar{
+  position:fixed;
+  width:100%;
+  height:95rpx;
+  bottom:0rpx;
+  border-top:1px solid #F7F8F9;
+  z-index:231;
+  display: flex;
+  background: #fff;
+  padding-top: 10rpx;
+  color: #999;
+}
+
+.tb_index image{
+  width:48rpx;
+  height:48rpx;
+  margin-bottom:-3rpx;
+}
+
+.tb_list image{
+  width: 44rpx;
+  height: 44rpx;
+}
+
+.tb_user image{
+  width: 45rpx;
+  height: 44rpx;
+}
+
+.tb_index,.tb_list,.tb_user{
+  flex: 1;
+  text-align: center;
+  height: 90rpx;
+}
+
+.tb_index view,.tb_list view,.tb_user view{
+  font-size: 26rpx;
+}
+
+.activeTab{
+  color:#47C7CC;
+}

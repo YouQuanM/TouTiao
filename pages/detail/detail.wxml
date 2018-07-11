@@ -1,0 +1,157 @@
+<view class="page" scroll-top="{{scrolltop}}" hidden='{{page_detail}}'>
+  <swiper indicator-dots="{{true}}" 
+  autoplay="{{true}}" interval="{{4000}}" duration="{{500}}">
+    <block wx:for="{{room_list.detail_pic}}" wx:key="{{index}}"> 
+      <swiper-item>
+        <image src="{{item}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+
+  <!-- <image class='share' src='../../images/share.png' bindtap='onShareAppMessage' data-menu="menu"></image>
+  <button class='shareBtn' open-type="share"></button> -->
+  <view class='detailTitle'>
+    <view class='title-text'>{{room_list.name}}</view>
+    <view class='phone-num' bindtap='phonenum'>
+      <image src='//public.wutongwan.org/public-20180519-Ftqe33tfJ9jWY2rdieWLfmx1DSIy'></image>
+    </view>
+
+    
+    <view class='share-new' bindtap='onShareAppMessage' data-menu="menu">立即分享</view>
+    <button class='shareBtn' open-type="share"></button>
+    <button open-type="launchApp" class='backApp' wx:if='{{backApp}}' app-parameter="dankegongyu://app/customer/room/detail?id={{public_id}}&rent_type={{rentType}}&from_app={{system}}" binderror="launchAppError">返回APP</button>
+  </view>
+
+  <view class='detail-address'>
+    <view class='detail-type'>{{room_list.bedroom_num}}室{{room_list.parlor}}厅 - {{room_list.floor_num}}/{{room_list.floor_total_num}}层 - {{room_list.area}} <text>(以现场勘查为准)</text></view>
+    <view class='address-info'>
+      <image src='//public.wutongwan.org/public-20180519-FrMCGX_qP0sUYCqAyvtryiy60-va' wx:if="{{nearest !== ''}}"></image>
+      <text wx:if="{{nearest !== ''}}">{{room_list.nearest_subway_title}}</text>
+    </view>
+  </view>
+  
+  <view class='pirceDetail'>
+    <view class='detail-price'>
+      <view class='price-info'><text>¥ {{room_list.price}}</text> {{room_list.price_unit}}</view>
+      <text class='paymentType'>({{room_list.payment_type}})</text>
+      <view class='price-type' bindtap='payment'>
+        <text>付款方式</text>
+        <view class='rightJt'></view>
+      </view>
+    </view>
+
+    <view class='price-part'>
+      <block wx:for="{{room_list.list_tags}}" wx:key="{{index}}">
+        <view class="price-tag">
+          <text>{{item}}</text>
+        </view>
+      </block>
+    </view>
+
+    <view class='activity' wx:if="{{activity !== 0}}">
+      <!-- <text class='activity-title' style='border:1px solid #{{activityPart.border_color}};color:#{{activityPart.font_color}};background:{{activityPart.bg_color}}'>{{activityPart.promotion_title}}</text> -->
+      <text class='activity-title' style='border:1px solid #C0C4C7;color:#959D9F;background:#fff'>{{activityPart.promotion_title}}</text>
+      <text class='activity-info'>{{activityPart.promotion_desc}}</text>
+    </view>
+  </view>
+  <!-- 房屋信息 -->
+  <view class='roominfo-detail'>
+    <text class='room-title'>房屋详情</text>
+    <block wx:for="{{room_list.roommates}}" wx:key="{{index}}">
+      <view class='room-info'>
+        <text>{{item.roomName}}</text>
+        <text>{{item.gender}}</text>
+        <text>{{item.area}}</text>
+        <text style='width:180rpx;text-align:center;'>{{item.price}}</text>
+        <text style='width:180rpx;text-align:center;' class="{{item.status == '可出租' ? 'roomOk' : 'roomOut'}}" data-title='{{item.status}}' data-public_id="{{item.id}}" data-rent_type="{{item.rent_type}}" bindtap='roomOk'>{{item.status}}</text>
+      </view>
+    </block>  
+  </view>
+  <!-- 房屋标配 -->
+  <view class='facility-config'>
+    <view class='config-title'>房屋标配</view>
+    <block wx:for="{{room_list.facility_config}}">
+      <view class='config-info' bindtap='moreconfig' data-title='{{item.title}}'>
+        <image src='{{item.icon}}'></image>
+        <view>{{item.title}}</view>
+      </view>
+    </block>
+  </view>
+  <!-- 服务介绍 -->
+  <view class='server'>
+    <view class='server-title'>服务介绍</view>
+    <block wx:for="{{room_list.service_info}}">
+      <view class='server-info'>
+        <image src='{{item.icon}}'></image>
+        <view class='server-part'>
+          <view class='server-line1'>{{item.title}}</view>
+          <view class='server-line2'>{{item.describe}}</view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <!-- 小区地图 -->
+  <view class='nearby'>
+    <view class='nearby-title'>小区及周边</view>
+    <!-- <map id='map' longitude="{{room_list.longitude}}" latitude="{{room_list.latitude}}" scale="14" markers="{{markers}}" style="width: 100%; height: 360rpx;"></map> -->
+    <map class="map" id="map" longitude="{{room_list.longitude}}" latitude="{{room_list.latitude}}" scale="14" markers="{{markers}}" bindmarkertap="makertap" style="width: 100%; height: 360rpx;"></map> 
+    <view class='nearby-info'>
+      <view class='community' wx:if="{{room_list.suite_ambitus.suite !=''}}">
+        小区：{{room_list.suite_ambitus.suite}}
+      </view>
+      <view class='go-out' wx:if="{{room_list.suite_ambitus.travel !=''}}">
+        出行：{{room_list.suite_ambitus.travel}}
+      </view>
+    </view>
+  </view>
+  <!-- 附近其他房源 -->
+  <view class='nearOther' wx:if="{{nearby_house !== 0}}">
+    <view class='nearOther-title'>附近其他房源</view>
+    <block wx:for="{{room_list.nearby_house}}">
+      <!-- <navigator class='index-model' url="../detail/detail?room_id={{item.id}}"> -->
+      <view class='index-model' bindtap='reLoad' data-public_id='{{item.public_id}}'>
+      <view class='room-detail'>
+        <view class='room-img'>
+          <image src='{{item.list_pic}}'></image>
+          <view class='roomImghz' wx:if="{{item.rent_type == 2}}">合</view>
+          <view class='roomImgzz' wx:if="{{item.rent_type == 1}}">整</view>
+        </view>
+        <view class='roomOther-info'>
+          <view class='other-title'>{{item.name}}</view>
+          <view class='detail-info'>
+            <image src='//public.wutongwan.org/public-20180519-Fm2GaCG3Mvr9dG2TochlN6XAuZ5H'></image>
+            <text>{{item.direction}}|{{item.area}}|{{item.floor_num}}楼</text>
+          </view>
+          
+          <view class='distence-info' wx:if="{{item.nearest_subway_title !=''}}">
+            <image src='//public.wutongwan.org/public-20180519-FrMCGX_qP0sUYCqAyvtryiy60-va'></image>
+            <text>{{item.nearest_subway_title}}</text>
+          </view>
+          
+          <view class='otherroom-tag'>
+            <block wx:for="{{item.list_tags}}" wx:for-index="index">
+              <view wx:if="{{index<3}}">{{item}}</view>
+            </block>
+          </view>
+        </view>
+        <view class='room-price'><text>¥{{item.price}}</text> 元/月</view>
+      </view>
+      </view>
+    </block>
+  </view> 
+
+  <view class='logo'>
+    <image src='//public.wutongwan.org/public-20180519-FpkACBN8t-aAurV0AdbfVMYAyEoR'></image>
+  </view>
+
+  <view class='foot-btn'>
+    <view class='phone-app' bindtap='phonenum'>电话预约</view>
+    <view class='online-app' bindtap='online'>在线预约</view>
+  </view>
+
+  <view class='toIndex' bindtap='toIndex' wx:if='{{from_pc}}'>
+    <view class='toindex_mask'></view>
+    <view class='toindex_word'>返回首页</view>
+  </view>
+  
+</view>

@@ -1,0 +1,114 @@
+.login_part{
+  height:220rpx;
+  display: flex;
+  background: #fff;
+  border-bottom:20rpx solid #F7F8F9;
+}
+
+.login_part image{
+  width:120rpx;
+  height:120rpx;
+  margin-top:50rpx;
+  margin-left:30rpx;
+  border-radius:100rpx;
+}
+
+.login_title{
+  padding-top: 70rpx;
+  margin-left: 30rpx;
+}
+
+.title_part{
+  font-size:32rpx;
+  font-weight:bold;
+  color:#000;
+}
+
+.sub_title{
+  font-size:28rpx;
+  color:#999;
+}
+
+.function_part{
+  background: #fff;
+}
+
+.yhq,.kf,.sz{
+  height:100rpx;
+  display: flex;
+  margin-left: 30rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  color: #666;
+  border-bottom:1px solid #EBEBEB;
+}
+
+.yhq_img,.kf_img,.sz_img{
+  width:42rpx;
+  height:40rpx;
+  margin-top: 30rpx;
+}
+
+.right_arrow{
+  width:14rpx;
+  height:26rpx;
+  margin-top:40rpx;
+  position:relative;
+}
+
+.yhq view,.kf view,.sz view{
+  margin-left: 15rpx;
+}
+
+.yhq .right_arrow{
+  left: 520rpx
+}
+
+.kf .right_arrow{
+  left: 490rpx
+}
+
+.sz .right_arrow{
+  left: 550rpx
+}
+
+.download_banner{
+  height:120rpx;
+  padding:40rpx 30rpx;
+  background:#fff;
+  line-height:120rpx;
+}
+
+.download_banner image{
+  height:120rpx;
+}
+
+button::after{
+  border: none;
+}
+
+.button{
+  width:690rpx;
+  height:120rpx;
+  border:1px solid #000;
+  position:relative;
+  top:-160rpx;
+  z-index: 10;
+  opacity:0;
+}
+
+.logout{
+  height:100rpx;
+  background:#fff;
+  text-align:center;
+  line-height:100rpx;
+  font-size:32rpx;
+  color:#666;
+  position:relative;
+  top:-98rpx;
+}
+
+
+
+
+

@@ -1,0 +1,51 @@
+<view class='page'>
+  <view class='rule' bindtap='clickRule'>活动规则</view>
+  <image src='../../images/active_bg.png' mode="widthFix" class='bg_img'></image>
+  <image src='../../images/unicorn.png' mode="widthFix" class='bg_unicorn'></image>
+  <image src='../../images/egg.png' class='bg_egg'></image>
+  <image src='../../images/box.png' class='bg_box'></image>
+  <view class='btn_text' bindtap='receive'>我要领取大礼包</view>
+
+
+  <view class='mask' wx:if='{{rule}}'></view>
+  <view class='active_rule' wx:if='{{rule_word}}'>
+    <image src='../../images/rule.png'></image>
+    <scroll-view class='rule_word' scroll-y="true" style="width:500rpx;height:650rpx">
+      <view>1、活动期间，邀请10名好友帮忙拆包，拆包成功，可获取房租立减券，金额最高达到千元;</view>
+      <view>2、每个用户仅限领取1个神秘大礼包哦！每个帮拆好友仅限帮助1个不同好友拆包哦！</view>
+      <view>3、领取成功后，奖品在小程序个人中心优惠券中查看哦！还可以关注蛋壳公寓公众号以及下载App去使用；</view>
+      <view>4、拆取红包期限为24小时内有效，自领取之日起30天内有效；</view>
+      <view>5、通过此活动获得的房租代金券只限选择年租用户使用；</view>
+      <view>6、如在活动中有作弊刷礼品行为，一经发现，即会立即取消游戏和领奖资格哦！如有任何疑问，请拨打400-818-5656 进行咨询。</view>
+      <view>7、礼包与以下活动共享：椋鸟计划：针对2018年应届毕业生，签约满一年及以上，即可享受最高1000元返现；“蛋壳公寓”会不定期推出指定房源立减活动；椋鸟计划和指定房源立减活动，优惠不共享。</view>
+    </scroll-view>
+    <view class='close' bindtap='close'></view>
+  </view>
+  <canvas canvas-id="shareCanvas" style="width:540rpx;height:960rpx;position:fixed;top:0;left:400px;" wx:if='{{canvas}}'></canvas>
+  <view class='receive_mask'  wx:if='{{receive_success}}'></view>
+  <view class='receive_success'  wx:if='{{receive_success}}'>
+    <view class='receive_title' style='opacity:{{opacitys}}'>礼包领取成功</view>
+    <view class='receive_sub_title' style='opacity:{{opacitys}}'>赶快叫好友们帮忙拆开吧~</view>
+    <image src='../../images/box1.png' class='receive_box' animation="{{animationData}}"></image>
+    <image src='../../images/box_bg.png' class='box_bg' animation="{{box_bg}}"></image>
+    <view class='btn_share' style='opacity:{{opacitys}}'>
+      <view class='photo_album' bindtap='share'>
+        <image src='../../images/photo_album.png'></image>
+        <text>保存到相册</text>
+      </view>
+      <view class='invite'>
+        <image src='../../images/invite.png'></image>
+        <text>邀好友拆礼包</text>
+        <button class='shareBtn' open-type="share" bindtap='onShareAppMessage'></button>
+      </view>
+    </view>
+    <image src='../../images/close.png' class='receive_close' style='opacity:{{opacitys}}' bindtap='receive_close'></image>
+  </view>
+
+
+  <view hidden='{{hidden}}' class='preview'>
+    <image src='{{prurl}}'></image>
+    <button type='primary' size='mini' bindtap='save'>保存分享图</button>
+  </view>
+  
+</view>

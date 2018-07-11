@@ -1,0 +1,201 @@
+<view class='page'>
+  <web-view wx:if='{{onoff}}' src="https://www.dankegongyu.com/u/coupon/tip"></web-view>
+
+  <view class="swiper-tab">
+    <view class="swiper-tab-list {{currentTab==0 ? 'on' : ''}}" >
+      <view class="borderLine {{currentTab==0 ? 'active' : ''}}" data-current="0" bindtap="swichNav">
+        未使用
+      </view>
+    </view>
+    <view class="swiper-tab-list {{currentTab==1 ? 'on' : ''}}" >
+      <view class="borderLine {{currentTab==1 ? 'active' : ''}}" data-current="1" bindtap="swichNav">
+        已过期
+      </view>
+    </view>  
+    <view class="swiper-tab-list {{currentTab==2 ? 'on' : ''}}" >
+       <view class="borderLine {{currentTab==2 ? 'active' : ''}}" data-current="2" bindtap="swichNav">
+        已使用
+      </view>
+    </view>  
+  </view>
+
+  <view class="noUse" wx:if="{{isShow == 0}}">
+    <view class='top_part'>
+      <view class='addCoupon'>
+        <input class='inputstyle' placeholder="添加绑定优惠券兑换" id='phoneNum' placeholder-class="inpClass" type='num' maxlength='20' bindinput ="coupon"></input>
+        <view class='exchange' bindtap='exchange' style='background:{{bg_con}}' disabled='{{disable_con}}'>兑换</view>
+      </view>
+      <view class='explain' bindtap='explain'>
+        <image src='../../images/group.png'></image>
+        <view>使用说明</view>
+      </view>
+    </view>
+
+    <view class='coupon_part'>
+      <view class='noCoupon' wx:if="{{noCoupon}}">
+        <image src='../../images/no.png'></image>
+        <view>您还没有优惠券</view>
+      </view>
+
+      <block wx:for="{{list}}" wx:key="{{index}}">
+        <view class='djq' wx:if="{{item.couponType == 'VOUCHER'}}" >
+          <image class='djq_title' src='../../images/djq.png'></image>
+          <view class='title_text'>代金券</view>
+          <image class='djq_money' src='../../images/left.png'></image>
+          <view class='money_part'>
+            <view class='money'><text>￥</text>{{item.amount}}</view>
+          </view>
+          <image class='djq_sm' src='../../images/right.png'></image>
+          <view class='servers'>服务代金券</view>
+          <view class='sm1'>仅限用于抵扣新签约及续约产生的服务费</view>
+          <view class='sm2'>{{item.startDate}}-{{item.endDate}}</view> 
+        </view>
+      </block>
+
+      <block wx:for="{{list}}" wx:key="{{index}}">
+        <view class='xjq' wx:if="{{item.couponType == 'CASH'}}">
+          <image class='djq_title' src='../../images/xjq.png'></image>
+          <view class='title_text'>现金券</view>
+          <image class='djq_money' src='../../images/left.png'></image>
+          <view class='money_part'>
+            <view class='money'><text>￥</text>{{item.amount}}</view>
+          </view>
+          <image class='djq_sm' src='../../images/right.png'></image>
+          <view class='servers'>服务现金券</view>
+
+          <view class='sm1'>仅限用于抵扣新签约及续约产生的服务费</view>
+          <view class='sm2'>{{item.startDate}}-{{item.endDate}}</view>  
+        </view>
+      </block>
+
+      <block wx:for="{{list}}" wx:key="{{index}}">
+        <view class='zkq' wx:if="{{item.couponType == 'DISCOUNT'}}"> 
+          <image class='djq_title' src='../../images/djq.png'></image>
+          <view class='title_text'>折扣券</view>
+          <image class='djq_money' src='../../images/left.png'></image>
+          <view class='money_part'>
+            <view class='money'>{{item.amount}}<text>折</text></view>
+          </view>
+          <image class='djq_sm' src='../../images/right.png'></image>
+          <view class='servers'>服务现金券</view>
+          <view class='sm1'>仅限用于抵扣新签约及续约产生的服务费</view>
+          <view class='sm2'>{{item.startDate}}-{{item.endDate}}</view>
+        </view>
+      </block>
+    </view>
+    <!-- <view class='copyright'>copyright © 2018 紫梧桐（北京）资产管理有限公司</view> -->
+  </view>
+   
+  <view class="overdue" wx:if="{{isShow == 1}}">
+    <view class='coupon_part' >
+      <view class='noCoupon_else' wx:if="{{noCoupon}}">
+        <image src='../../images/no.png'></image>
+        <view>您还没有优惠券</view>
+      </view>
+
+      <block wx:for="{{list}}" wx:key="{{index}}">
+        <view class='djq' wx:if="{{item.couponType == 'CASH'}}">
+          <image class='djq_title' src='../../images/used.png'></image>
+          <view class='title_text'>代金券</view>
+          <image class='djq_money' src='../../images/left.png'></image>
+          <view class='money_part'>
+            <view class='money'><text>￥</text>{{item.amount}}</view>
+          </view>
+          <image class='djq_sm' src='../../images/right.png'></image>
+          <view class='servers'>服务代金券</view>
+          <view class='sm1'>仅限用于抵扣新签约及续约产生的服务费</view>
+          <view class='sm2'>{{item.startDate}}-{{item.endDate}}</view> 
+          <image class='overdue_img' src='../../images/overdue.png'></image>
+        </view>
+      </block>
+
+      <block wx:for="{{list}}" wx:key="{{index}}">    
+        <view class='xjq' wx:if="{{item.couponType == 'VOUCHER'}}">
+          <image class='djq_title' src='../../images/used.png'></image>
+          <view class='title_text'>现金券</view>
+          <image class='djq_money' src='../../images/left.png'></image>
+          <view class='money_part'>
+            <view class='money'><text>￥</text>{{item.amount}}</view>
+          </view>
+          <image class='djq_sm' src='../../images/right.png'></image>
+          <view class='servers'>服务现金券</view>
+          <view class='sm1'>仅限用于抵扣新签约及续约产生的服务费</view>
+          <view class='sm2'>{{item.startDate}}-{{item.endDate}}</view> 
+          <image class='overdue_img' src='../../images/overdue.png'></image>
+        </view>
+      </block>
+  
+      <block wx:for="{{list}}" wx:key="{{index}}">    
+        <view class='zkq' wx:if="{{item.couponType == 'DISCOUNT'}}">
+          <image class='djq_title' src='../../images/used.png'></image>
+          <view class='title_text'>折扣券</view>
+          <image class='djq_money' src='../../images/left.png'></image>
+          <view class='money_part'>
+            <view class='money'>{{item.amount}}<text>折</text></view>
+          </view>
+          <image class='djq_sm' src='../../images/right.png'></image>
+          <view class='servers'>服务折扣券</view>
+          <view class='sm1'>仅限用于抵扣新签约及续约产生的服务费</view>
+          <view class='sm2'>{{item.startDate}}-{{item.endDate}}</view> 
+          <image class='overdue_img' src='../../images/overdue.png'></image>
+        </view> 
+      </block>  
+    </view> 
+  </view>
+
+
+
+  <view class="used" wx:if="{{isShow == 2}}">
+    <view class='coupon_part' >
+      <view class='noCoupon_else' wx:if="{{noCoupon}}">
+        <image src='../../images/no.png'></image>
+        <view>您还没有优惠券</view>
+      </view>
+      <block wx:for="{{list}}" wx:key="{{index}}">
+        <view class='djq' wx:if="{{item.couponType == 'CASH'}}">
+          <image class='djq_title' src='../../images/used.png'></image>
+          <view class='title_text'>代金券</view>
+          <image class='djq_money' src='../../images/left.png'></image>
+          <view class='money_part'>
+            <view class='money'><text>￥</text>{{item.amount}}</view>
+          </view>
+          <image class='djq_sm' src='../../images/right.png'></image>
+          <view class='servers'>服务代金券</view>
+          <view class='sm1'>仅限用于抵扣新签约及续约产生的服务费</view>
+          <view class='sm2'>{{item.startDate}}-{{item.endDate}}</view> 
+          <image class='overdue_img' src='../../images/used_img.png'></image>
+        </view>
+      </block>
+      <block wx:for="{{list}}" wx:key="{{index}}">
+        <view class='xjq' wx:if="{{item.couponType == 'VOUCHER'}}">
+          <image class='djq_title' src='../../images/used.png'></image>
+          <view class='title_text'>现金券</view>
+          <image class='djq_money' src='../../images/left.png'></image>
+          <view class='money_part'>
+            <view class='money'><text>￥</text>{{item.amount}}</view>
+          </view>
+          <image class='djq_sm' src='../../images/right.png'></image>
+          <view class='servers'>服务现金券</view>
+          <view class='sm1'>仅限用于抵扣新签约及续约产生的服务费</view>
+          <view class='sm2'>{{item.startDate}}-{{item.endDate}}</view> 
+          <image class='overdue_img' src='../../images/used_img.png'></image>
+        </view>
+      </block>
+      <block wx:for="{{list}}" wx:key="{{index}}">
+        <view class='zkq' wx:if="{{item.couponType == 'DISCOUNT'}}">
+          <image class='djq_title' src='../../images/used.png'></image>
+          <view class='title_text'>折扣券</view>
+          <image class='djq_money' src='../../images/left.png'></image>
+          <view class='money_part'>
+            <view class='money'>{{item.amount}}<text>折</text></view>
+          </view>
+          <image class='djq_sm' src='../../images/right.png'></image>
+          <view class='servers'>服务折扣券</view>
+          <view class='sm1'>仅限用于抵扣新签约及续约产生的服务费</view>
+          <view class='sm2'>{{item.startDate}}-{{item.endDate}}</view> 
+          <image class='used_img' src='../../images/used_img.png'></image>
+        </view>
+      </block>  
+    </view>
+  </view>
+</view>

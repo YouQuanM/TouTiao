@@ -1,0 +1,88 @@
+<view class='page'>
+  <view class='status'>
+    <view class='part_1'>
+      <view class='line1'></view>
+      <view class='circle1' wx:if='{{indetify1}}'>1</view> 
+      <view class='circle1' wx:if='{{indetify2}}'>
+        <image src='../../images/dh.png' style='width:29rpx;height:20rpx;'></image>
+      </view>
+      <view class='identity1'>验证身份</view>
+    </view>
+     <view class='part_2' wx:if='{{indetify1}}'>
+      <view class='line2'></view>
+      <view class='circle2'>2</view>  
+      <view class='identity2'>验证新手机</view>
+    </view> 
+    <view class='part_2' wx:if="{{indetify2}}">
+      <view class='line2' style='background:#3DBCC6;'></view>
+      <view class='circle2' style='color:#fff;background:#3DBCC6;' wx:if='{{indetify3}}'>2</view>
+      <view class='circle2'style='color:#fff;background:#3DBCC6;' wx:if='{{indetify4}}'>
+        <image src='../../images/dh.png' style='width:29rpx;height:20rpx;'></image>
+      </view>
+      <view class='identity2' style='color:#3DBCC6;'>验证新手机</view>
+    </view>  
+  </view>
+  <view class='inp_part'>
+    <input class='inputstyle' placeholder="请输入新手机号" id='phoneNum' placeholder-class="inpClass" type='num' maxlength='11' bindinput ="phoneNumInput" wx:if='{{newPhone}}'></input> 
+    <view class='present_phone' wx:if='{{oldPhone}}'>
+      <text class='tit_num'>当前手机号</text><text class='present_phoneNum'>{{present_phoneNum}}</text>
+    </view>
+    <view wx:if='{{indetify1}}'>
+        <input class='inputstyle' placeholder="请输入验证码" id='yzm' placeholder-class="inpClass" type='num' maxlength='4' bindinput ="yzmInput1" value='{{inputVal}}'></input>
+        <button class='yzm' disabled='{{disabled1}}' data-id="2" bindtap="getVerificationCode1" style='background:#fff;'>
+          {{time1}}
+        </button>
+    </view>
+    <view wx:if='{{indetify2}}'>
+        <input class='inputstyle' placeholder="请输入验证码" id='yzm' placeholder-class="inpClass" type='num' maxlength='4' bindinput ="yzmInput2" value='{{inputVal}}'></input>
+        <button class='yzm' disabled='{{disabled2}}' data-id="3" bindtap="getVerificationCode2" style='background:#fff;'>
+          {{time2}}
+        </button>
+    </view>
+  </view>
+  <view class='err-info'>
+    <text>{{errInfo}}</text>
+  </view>  
+
+  <text class='no_yzm'>收不到验证码，请拨打</text>
+  <text class='no_yzm_num' bindtap='phonenum'>4001-551-551</text>
+
+  <view class='next' disabled='{{disable_con}}' bindtap="confirm1" style='background:{{bg_con}}' wx:if='{{indetify1}}'>下一步</view>
+  <view class='next' disabled='{{disable_con}}' bindtap="confirm2" style='background:{{bg_con}}' wx:if='{{indetify2}}'>完成</view>
+
+   <view hidden="{{flag}}" class='hidden' wx:if="{{indetify1}}">
+    <view class='yzm-img'>
+      <view class='yzm-title'>图片验证码</view>
+      <view class='inp-part'>
+        <input class='inp_img' placeholder='请输入图片验证码' placeholder-class='inpYzm' value="{{yzmimgValue}}" bindinput ="yzmimgInput1"></input>
+        <view class='yzmImage' bindtap='changeImg1'>
+          <image src='{{yzmPhone1}}'></image>
+          <view>看不清，换一张</view>
+        </view>
+      </view>
+      <view class='erryzmText'>{{errImg}}</view>
+      <view class="yzm-qd" bindtap='yzmqd1'>
+        <text>确定</text>
+      </view>
+    </view>
+  </view>  
+
+
+  <view hidden="{{flag}}" class='hidden' wx:if="{{indetify2}}">
+    <view class='yzm-img'>
+      <view class='yzm-title'>图片验证码</view>
+      <view class='inp-part'>
+        <input class='inp_img' placeholder='请输入图片验证码' placeholder-class='inpYzm' value="{{yzmimgValue}}" bindinput ="yzmimgInput2"></input>
+        <view class='yzmImage' bindtap='changeImg2'>
+          <image src='{{yzmPhone2}}'></image>
+          <view>看不清，换一张</view>
+        </view>
+      </view>
+      <view class='erryzmText'>{{errImg}}</view>
+      <view class="yzm-qd" bindtap='yzmqd2'>
+        <text>确定</text>
+      </view>
+    </view>
+  </view>
+
+</view>

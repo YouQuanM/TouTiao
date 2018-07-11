@@ -1,0 +1,7 @@
+<view class='page'>
+  <view class='wt-success'>
+    <image src='//public.wutongwan.org/public-20180519-FrJRjjh3DLy_cIzTMbc-cyCM8Y8T'></image>
+    <view>我们会尽快联系您，请保持电话畅通！</view>
+    <button bindtap="backIndex">返回首页</button>
+  </view>
+</view> 

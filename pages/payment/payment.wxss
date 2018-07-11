@@ -1,0 +1,80 @@
+.paymentTitle{
+  margin-left:30rpx;
+  margin-top:30rpx;
+  font-size:40rpx;
+}
+
+.payPart{
+  padding:30rpx;
+  font-size:32rpx;
+  border-bottom:1rpx solid #e4e8eb;
+}
+
+.payYear{
+  display:inline-block;
+  font-size: 32rpx;
+}
+
+.bestPirce{
+  padding:5rpx 15rpx;
+  background:#ff001f;
+  display:inline-block;
+  font-size:22rpx;
+  color: #fff;
+  margin-left: 30rpx;
+  border-radius: 100rpx;
+}
+
+.deposit,.serverPay{
+  font-size:24rpx;
+  margin-top:10rpx;
+  color: #666;
+}
+
+.price{
+  float:right;
+  margin-top:-135rpx;
+  font-size:32rpx;
+}
+
+.JG{
+  width: 100%;
+  height: 20rpx;
+  background: #e7e7e7;
+}
+
+.serverFix{
+  padding:40rpx;
+  border:1rpx solid #e7e7e7;
+}
+
+.serFix-title,.deposit-title{
+  font-size: 40rpx;
+  color: #333;
+}
+
+.serFix-detail{
+  margin-top:40rpx;
+}
+
+.ser-pay,.fix-pay{
+  margin-top: 40rpx;
+  margin-bottom: 10rpx;
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333;
+}
+
+.ser-detail,.serFix-detail,.fix-detail,.deposit-detail{
+  font-size:24rpx;
+  color: #666;
+}
+
+.deposit-all{
+  padding: 40rpx;
+}
+
+.deposit-title{
+  margin-bottom: 40rpx
+}
+

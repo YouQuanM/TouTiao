@@ -1,0 +1,26 @@
+<view class='page'>
+  <view class='roomData'>
+    <view class='more-title'>房间必备</view>
+    <block wx:for="{{more_list.roomData}}">
+      <view class='more-info'>
+        <image src='{{item.icon}}'></image>
+        <view>{{item.title}}</view>
+      </view>
+    </block>
+  </view>
+
+
+  <view class='publicData'>
+    <view class='roomData'>
+      <view class='publi-title'>公共区域</view>
+      <block wx:for="{{more_list.publicData}}">
+        <view class='more-info'>
+          <image src='{{item.icon}}'></image>
+          <view>{{item.title}}</view>
+        </view>
+      </block>
+    </view>  
+  </view>
+</view>
+
+

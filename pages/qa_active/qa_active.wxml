@@ -1,0 +1,94 @@
+
+
+<scroll-view class='all_view' scroll-y='{{isScroll}}' scroll-top="{{scroll_pos}}" scroll-with-animation="true" catchtouchmove='true' scroll-into-view="{{toView}}" style='height:{{all_height}}'>
+
+  <view class='sixth' id='sixth'>
+    <!-- <image src='../../images/qa6_bg.png' class='sixth_bg'></image> -->
+    <image src='http://public.wutongwan.org/public-20180628-FksQYUr4RZfEdocC3JZqbNK_XzUi' class='sixth_bg'></image>
+    <image src='../../images/qa6_word.png' class='text6_word' style='opacity:{{opacitys6}}'></image>
+    <image src='../../images/qa6_img.png' class='qa6_img' animation="{{qa5_img}}"></image>
+    <image src='../../images/qa6_A.png' class='qa6_A' bindtap='sixth_A' style='opacity:{{opacitys6}}'></image>
+    <image src='../../images/qa6_B.png' class='qa6_B' bindtap='sixth_B' style='opacity:{{opacitys6}}'></image>
+    <image src='../../images/qa6_C.png' class='qa6_C' bindtap='sixth_C' style='opacity:{{opacitys6}}'></image>
+    <image src='../../images/qa6_D.png' class='qa6_D' bindtap='sixth_D' style='opacity:{{opacitys6}}'></image>
+  </view>
+
+  <view class='fifth' id='fifth'>
+    <!-- <image src='../../images/qa5_bg.png' class='fifth_bg'></image> -->
+    <image src='http://public.wutongwan.org/public-20180628-FqCL3u82FUhPZhNPGC-7ZjlbkBii' class='fifth_bg'></image>
+    <image src='../../images/qa5_word.png' class='text5_word' style='opacity:{{opacitys5}}'></image>
+    <image src='../../images/qa5_img.png' class='qa5_img' animation="{{qa5_img}}"></image>
+    <image src='../../images/qa5_A.png' class='qa5_A' bindtap='fifth_A' style='opacity:{{opacitys5}}'></image>
+    <image src='../../images/qa5_B.png' class='qa5_B' bindtap='fifth_B' style='opacity:{{opacitys5}}'></image>
+    <image src='../../images/qa5_C.png' class='qa5_C' bindtap='fifth_C' style='opacity:{{opacitys5}}'></image>
+    <image src='../../images/qa5_D.png' class='qa5_D' bindtap='fifth_D' style='opacity:{{opacitys5}}'></image>
+  </view>
+
+  <view class='fourth' id='fourth'>
+    <!-- <image src='../../images/qa4_bg.png' class='fourth_bg'></image> -->
+    <image src='http://public.wutongwan.org/public-20180628-FgqAe8AnBayg67yHgBWjOwXBvugq' class='fourth_bg'></image>
+    <image src='../../images/qa4_word.png' class='text4_word' style='opacity:{{opacitys4}}'></image>
+    <image src='../../images/qa4_img.png' class='qa4_img' animation="{{qa4_img}}"></image>
+    <image src='../../images/qa4_A.png' class='qa4_A' class="{{isIphoneX?'qa4_A_ipx':'qa4_A'}}" bindtap='fourth_A' style='opacity:{{opacitys4}}'></image>
+    <image src='../../images/qa4_B.png' class='qa4_B' class="{{isIphoneX?'qa4_B_ipx':'qa4_B'}}" bindtap='fourth_B' style='opacity:{{opacitys4}}'></image>
+    <image src='../../images/qa4_C.png' class='qa4_C' class="{{isIphoneX?'qa4_C_ipx':'qa4_C'}}" bindtap='fourth_C' style='opacity:{{opacitys4}}'></image>
+    <image src='../../images/qa4_D.png' class='qa4_D' class="{{isIphoneX?'qa4_D_ipx':'qa4_D'}}" bindtap='fourth_D' style='opacity:{{opacitys4}}'></image>
+  </view>
+
+  <view class='third' id='third'>
+    <!-- <image src='../../images/qa3_bg.png' class='third_bg'></image> -->
+    <image src='http://public.wutongwan.org/public-20180628-FmUvReuJ23Z3TC0m-MgEbvKhsLfv' class='third_bg'></image>
+    <image src='../../images/qa3_word.png' class='text3_word' style='opacity:{{opacitys3}}'></image>
+    <image src='../../images/qa3_img.png' class='qa3_img'></image>
+    <image src='../../images/qa3_blow.png' class='blow'  animation="{{blow}}"></image>
+    <image src='../../images/qa3_mouth.png' class='mouth'></image>
+    <image src='../../images/qa3_A.png' class='qa3_A' bindtap='third_A' style='opacity:{{opacitys3}}'></image>
+    <image src='../../images/qa3_B.png' class='qa3_B' bindtap='third_B' style='opacity:{{opacitys3}}'></image>
+    <image src='../../images/qa3_C.png' class='qa3_C' bindtap='third_C' style='opacity:{{opacitys3}}'></image>
+  </view>
+
+  <view class='second' id='second'>
+    <!-- <image src='../../images/qa2_bg.png' class='second_bg'></image> -->
+    <image src='http://public.wutongwan.org/public-20180628-FtTjY6PRlj0ZxvxgZqVzvWz4qewt' class='second_bg'></image>
+    <image src='../../images/qa2_word.png' class='text2_word' style='opacity:{{opacitys2}}'></image>
+    <image src='../../images/qa2_img.png' class='qa2_img' animation="{{qa2_img}}"></image>
+    <image src='../../images/qa2_A.png' class='qa2_A' bindtap='second_A' style='opacity:{{opacitys2}}'></image>
+    <image src='../../images/qa2_B.png' class='qa2_B' bindtap='second_B' style='opacity:{{opacitys2}}'></image>
+    <image src='../../images/qa2_C.png' class='qa2_C' bindtap='second_C' style='opacity:{{opacitys2}}'></image>
+    <image src='../../images/qa2_D.png' class='qa2_D' bindtap='second_D' style='opacity:{{opacitys2}}'></image>
+    <image src='../../images/qa2_E.png' class='qa2_E' bindtap='second_E' style='opacity:{{opacitys2}}'></image>
+  </view> 
+
+  <view class='first' id='first'>
+    <!-- <image src='../../images/qa_1.png' class='first_bg'></image> -->
+    <image src='http://public.wutongwan.org/public-20180628-Fgu6MuDfO7-p_3BG60qE6H8jnro6' class='first_bg'></image>
+    <image src='../../images/text1.png' class='text1_word' style='opacity:{{opacitys}}'></image>
+    <image src='../../images/1head.png' class='qa_1head' animation="{{qa_1head}}"  ></image>
+    <image src='../../images/hand.png' class='hand1'></image>
+    <image src='../../images/hand.png' class='hand2'></image>
+    <image src='../../images/A.png' class='qa1_A' bindtap='first_A' style='opacity:{{opacitys}}'></image>
+    <image src='../../images/B.png' class='qa1_B' bindtap='first_B' style='opacity:{{opacitys}}'></image>
+    <image src='../../images/C.png' class='qa1_C' bindtap='first_C' style='opacity:{{opacitys}}'></image>
+    <image src='../../images/D.png' class='qa1_D' bindtap='first_D' style='opacity:{{opacitys}}'></image>
+  </view> 
+
+  <view class='page' id='page'>  
+    <image class='qa_bg' src='../../images/qa_bg.png'></image>
+    <view class="{{isIphoneX?'btn_mask_ipx':'btn_mask'}}" bindtap='start' ></view>
+    <image src='../../images/start.png' mode="widthFix" animation="{{btn_img}}" class="{{isIphoneX?'btn_img_ipx':'btn_img'}}"></image>
+    <view class="{{isIphoneX?'joined_ipx':'joined'}}">已有 <text>{{user_num}}</text> 人参加测试</view>
+    <image class='nan_left' src='../../images/nan_left.png' mode="widthFix" animation="{{left_img}}"></image>
+    <image class='middle_bg' src='../../images/middle_bg.png' mode="widthFix" animation="{{middle_bg}}"></image>
+    <image class='nv_right' src='../../images/nv_right.png' mode="widthFix" animation="{{right_img}}"></image>
+    <image class='danbao' src='../../images/db.png' mode="widthFix" animation="{{danbao}}" style='opacity:{{opacitys}}'></image>
+  </view>
+
+</scroll-view>  
+
+
+<view class='guodu' wx:if='{{guodu}}'>
+  <image src='http://public.wutongwan.org/public-20180630-Frk7J3ElSqAzNAFAzrVkmSwoSjVe' class='guodu'></image>
+  <image src='http://public.wutongwan.org/public-20180630-Fpv9Y1wkrjSIWgxkPPXxns3TYpCD' class='guodu_a'></image>
+</view>
+
+

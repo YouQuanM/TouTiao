@@ -1,0 +1,71 @@
+<view class='page'>
+  <view class='result'>
+    <image src='../../images/fin_bg_01.png' class='result_bg'></image>
+
+    <view class='user_name'>{{userNickname}}</view>
+    <view class='word_line'>
+      <view class='user_des1'>{{now_list.explain1}}{{now_list.explain2}}</view>
+      <view class='user_live'>经认证，最适合居住在 {{now_list.des}} {{now_list.name}}</view>
+    </view>
+    
+    <image src='../../images/toAlbum.png' class='toAlbum' bindtap='toAlbum'></image>
+    <image src='../../images/toShare.png' class='toShare' bindtap='toShare'></image>
+    <image src='../../images/one_more.png' class='one_more' bindtap='one_more'></image>
+    <button class='shareBtn' open-type="share" bindtap='onShareAppMessage'></button>
+  </view>
+
+
+  <view class='recommend'>
+    <image src='../../images/fin_bg_02.png' class='recommend_bg'></image>
+
+    <view class='line1'>
+      <block wx:for="{{avatars_list1}}" wx:for-index="index" wx:key="*this">
+        <image src='{{item}}' class='line_img'></image>
+      </block>
+    </view>
+
+    <view class='line2'>
+      <block wx:for="{{avatars_list2}}" wx:for-index="index" wx:key="*this">
+        <image src='{{item}}' class='line_img'></image>
+      </block>
+    </view>
+
+    <scroll-view scroll-x="true" class='all_list'> 
+      <block wx:for="{{room_list}}" wx:for-index="index" wx:key="*this">
+        <navigator class="upload_Item" url="../detail/detail?id={{item.public_id}}&rent_type={{item.rent_type}}&from_app="> 
+          <image src="{{item.list_pic}}" mode='width' class="upload_Item_img"/>
+          <view class='add_des'>{{item.name}}</view>
+          <view class='add_price'>{{item.price}} <text>{{item.price_unit}}</text></view>
+        </navigator> 
+      </block>
+    </scroll-view> 
+
+    <view class='more_room' bindtap='more_room'></view>
+    <view class='joined'>已有 <text>{{user_num}}</text> 人参加测试</view>
+  </view>
+  <canvas canvas-id="shareCanvas" style="width:270px;height:480px;position:fixed;top:0;left:500px;" wx:if='{{canvas}}'></canvas>
+  <view class='toIndex' bindtap='toIndex'>
+    <view class='toindex_mask'></view>
+    <view class='toindex_word'>返回首页</view>
+  </view>
+     <!-- <view hidden='{{hidden}}' class='preview'>
+      <image src='{{prurl}}'></image>
+      <button type='primary' size='mini' bindtap='save'>保存分享图</button>
+    </view>   -->
+</view>
+
+ <view class='guodu' wx:if='{{guodu}}'>
+  <image src='http://public.wutongwan.org/public-20180630-Frk7J3ElSqAzNAFAzrVkmSwoSjVe' class='guodu'></image>
+  <image src='http://public.wutongwan.org/public-20180630-Fpv9Y1wkrjSIWgxkPPXxns3TYpCD' class='guodu_a'></image>
+</view> 
+
+
+
+
+
+
+
+
+
+
+

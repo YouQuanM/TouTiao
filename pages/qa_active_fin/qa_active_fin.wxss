@@ -1,0 +1,322 @@
+page{
+  width: 100%;
+  height: 100%;
+   overflow-x: hidden; 
+}
+
+.page{
+  overflow-x: hidden; 
+} 
+
+.result,.recommend{
+  position: relative;
+}
+
+.recommend{
+  margin-bottom: -14rpx;
+}
+
+.result_bg{
+  width: 750rpx;
+  height: 1020rpx;
+}
+
+.recommend_bg{
+  width: 750rpx;
+  height: 1216rpx;
+}
+
+.user_name{
+  position:absolute;
+  top:110rpx;
+  left:90rpx;
+  font-size:36rpx;
+  font-weight:bold;
+  color:#23235c;
+}
+
+.user_des1{
+  width:510rpx;
+  font-size:40rpx;
+  font-weight:bold;
+  color:#23235c;
+  text-align:justify;
+  line-height:62rpx;
+}
+
+.user_des2{
+  position:absolute;
+  font-size:36rpx;
+  font-weight:bold;
+  color:#23235c;
+  top:300rpx;
+  left:90rpx;
+  width: 600rpx;
+  line-height: 70rpx;
+}
+
+.user_live{
+  font-size:28rpx;
+  background:#437ed0;
+  height:70rpx;
+  line-height:70rpx;
+  color:#fff;
+  padding:0rpx 36rpx;
+  box-shadow:10rpx 10rpx 0rpx rgba(41,128,215,0.3);
+  margin-top:30rpx;
+  display:inline-block;
+  max-width:610rpx;
+}
+
+.toAlbum{
+  position: absolute;
+  top:550rpx;
+  left:55rpx;
+  width: 296rpx;
+  height: 96rpx;
+}
+
+.toShare{
+  position: absolute;
+  top: 550rpx;
+  right: 55rpx;
+  width: 296rpx;
+  height: 96rpx;
+}
+
+.line_img{
+  width:80rpx;
+  height:80rpx;
+  border-radius:100rpx;
+  border:8rpx solid #fefefd;
+  margin-right:30rpx;
+}
+
+.line1{
+  position:absolute;
+  top:135rpx;
+  left:70rpx;
+}
+
+.line2{
+  position:absolute;
+  top:250rpx;
+  left:134rpx;
+}
+
+
+
+.swiper{
+  position:absolute;
+  bottom: 400rpx;
+  width: 100%;
+  height: 375rpx;
+  display: flex;
+  flex-direction: column;
+}
+.swiper-item{
+  height:375rpx;
+  width:345rpx;
+  background: #fff;
+  flex: 1;
+}
+
+.swiper_img{
+  width:336rpx;
+  height:252rpx;
+
+}
+
+
+
+/* .all_list{
+  position:absolute;
+  bottom:527rpx;
+  left:30rpx;
+
+}
+.uploadWrap{
+  height:252rpx;
+  width:100%; 
+  display: flex; 
+  display: -webkit-box;  
+  flex-direction: column;
+} 
+.upload_Item{ 
+  width:336rpx;
+  height:252rpx;
+  flex: 1;
+} 
+.upload_Item_img{ 
+  width:336rpx;
+  height:252rpx;
+} */
+
+.all_list{
+  display: flex;
+  white-space: nowrap;
+  position:absolute;
+  bottom:445rpx;
+  left:30rpx;
+}
+.upload_Item{
+  width:336rpx;
+  height:372rpx;
+  display: inline-block;
+  background: #fff;
+  margin-right: 15rpx;
+  font-size: 28rpx;
+  text-overflow:ellipsis;
+  color:#333;
+}
+.upload_Item_img{
+  width:336rpx;
+  height:252rpx;
+  margin-bottom:10rpx;
+}
+.add_des{
+  margin-left:15rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.add_price{
+  margin-left:15rpx;
+  color:#e56d56;
+  font-weight:bold;
+  margin-top:10rpx;
+}
+.add_price text{
+  font-weight:normal;
+  font-size: 24rpx;
+}
+
+
+
+
+
+.joined{
+  position:absolute;
+  font-size:22rpx;
+  color:#788ea4;
+  bottom:216rpx;
+  left:275rpx;
+}
+
+.joined text{
+  color: #ee794c;
+}
+
+.more_room{
+  width:397rpx;
+  height:89rpx;
+  position:absolute;
+  bottom:288rpx;
+  left:176rpx;
+}
+
+
+.preview {
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.6);
+  position: absolute;
+  z-index: 22;
+   top: 0; 
+}
+.preview image{
+  width:520rpx;
+  height:924rpx;
+  position:absolute;
+  top:5%;
+  left:50%;
+  z-index:23;
+  border:1px dashed #fff;
+  margin-left:-260rpx;
+}
+.preview button{
+  width:57%;
+  position:absolute;
+  bottom:120rpx;
+  left:22%;
+  height:70rpx;
+  line-height:70rpx;
+}
+
+.one_more{
+  width:135rpx;
+  height:25rpx;
+  position:absolute;
+  top:685rpx;
+  z-index:5;
+  right:70rpx;
+}
+
+.shareBtn{
+  width:281rpx;
+  height:93rpx;
+  position:absolute;
+  top:570rpx;
+  right:62rpx;
+  opacity:0;
+}
+
+.word_line{
+  position:absolute;
+  z-index:100;
+  height:400rpx;
+  top:183rpx;
+  left:90rpx;
+}
+
+.toIndex{
+  position:fixed;
+  bottom:10rpx;
+  right:20rpx;
+}
+
+.toindex_mask{
+  width:98rpx;
+  height:98rpx;
+  border-radius:100rpx;
+  background:#000;
+  opacity:0.5;
+  position:relative;
+  z-index:1000;
+}
+
+.toindex_word{
+  width:70rpx;
+  height:98rpx;
+  color:#fff;
+  font-size:24rpx;
+  position:relative;
+  z-index:1001;
+  top:-78rpx;
+  left:26rpx;
+  line-height: 30rpx;
+}
+
+.guodu{
+  position:absolute;
+  top:0rpx;
+  width:100%;
+  height:100%;
+  z-index:1000;
+}
+
+.guodu{
+  width:100%;
+  height:100%;
+}
+
+.guodu_a{
+  width:280rpx;
+  height:280rpx;
+  position:absolute;
+  z-index:1010;
+  left:50%;
+  top:50%;
+  margin-left:-140rpx;
+  margin-top:-266rpx;
+}

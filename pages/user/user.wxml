@@ -1,0 +1,47 @@
+<view class='page'>
+  <view class='login_part' bindtap='toLogin'>
+     <image src='{{avatar}}'></image>
+     <view class='login_title'>
+        <view class='title_part'>{{nickname}}</view>
+        <view class='sub_title'>{{mobile}}</view>
+     </view>   
+  </view>
+  <view class='function_part'>
+     <view class='yhq' bindtap='coupon'>
+        <image class='yhq_img' src='../../images/yhq.png'></image>
+        <view>优惠券</view>
+        <image class='right_arrow' src='../../images/right_arrow.png'></image>
+     </view>
+     <view class='kf' bindtap='selectPhone'>
+        <image class='kf_img' src='../../images/kf.png'></image>
+        <view>客服咨询</view>
+        <image class='right_arrow' src='../../images/right_arrow.png'></image>
+     </view>
+     <view class='sz' bindtap='config'>
+        <image class='sz_img' src='../../images/sz.png'></image>
+        <view>设置</view>
+        <image class='right_arrow' src='../../images/right_arrow.png'></image>
+     </view>
+  </view>
+  <view class='download_banner' bindtap='download'>
+      <image src='../../images/download.png'></image>
+  </view>
+  <button open-type="contact" session-from='weapp' class='button'></button>
+
+  <view class='logout' bindtap='logout' wx:if="{{logout_onoff}}">退出登录</view>
+
+  <view class='tabBar'>
+     <view class='tb_index' bindtap='toIndex'>
+      <image src='{{index_img}}'></image>
+      <view class="{{tabcolor == 1?'activeTab':''}}">{{index_tit}}</view>
+    </view>
+    <view class='tb_list' bindtap='toList'>
+      <image src='{{list_img}}'></image>
+      <view class="{{tabcolor == 2?'activeTab':''}}">{{list_tit}}</view>
+    </view>
+    <view class='tb_user' bindtap='toUser'>
+      <image src='{{user_img}}'></image>
+      <view class="{{tabcolor == 3?'activeTab':''}}">{{user_tit}}</view>
+    </view> 
+  </view>
+</view>
